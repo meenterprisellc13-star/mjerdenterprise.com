@@ -465,39 +465,8 @@
         <div class="gold-line"></div>
       </div>
 
-      <div class="verticals-grid">
-        <div class="vertical-card fade-up fade-up-delay-1">
-          <div class="vertical-icon">🏋️</div>
-          <div>
-            <span class="vertical-status status-active">Active Target</span>
-            <h3 class="heading-md" style="margin-bottom:0.6rem;">Fitness & Wellness</h3>
-            <p class="body-sm">Recurring revenue, loyal members, and strong community ties. High fragmentation creates prime consolidation opportunity. Ur Gains Fitness is our identified first acquisition target.</p>
-          </div>
-        </div>
-        <div class="vertical-card fade-up fade-up-delay-2">
-          <div class="vertical-icon">🚗</div>
-          <div>
-            <span class="vertical-status status-pipeline">Acquisition Pipeline</span>
-            <h3 class="heading-md" style="margin-bottom:0.6rem;">Automotive</h3>
-            <p class="body-sm">Fragmented ownership, consistent demand, and significant margin improvement opportunities through operational efficiency and systems installation.</p>
-          </div>
-        </div>
-        <div class="vertical-card fade-up fade-up-delay-3">
-          <div class="vertical-icon">💻</div>
-          <div>
-            <span class="vertical-status status-pipeline">Acquisition Pipeline</span>
-            <h3 class="heading-md" style="margin-bottom:0.6rem;">SaaS & Technology</h3>
-            <p class="body-sm">Scalable business models with predictable recurring revenue, high retention rates, and low marginal cost of growth — ideal for portfolio scaling.</p>
-          </div>
-        </div>
-        <div class="vertical-card fade-up fade-up-delay-4">
-          <div class="vertical-icon">🏪</div>
-          <div>
-            <span class="vertical-status status-pipeline">Acquisition Pipeline</span>
-            <h3 class="heading-md" style="margin-bottom:0.6rem;">Franchise & Hospitality</h3>
-            <p class="body-sm">Proven systems and established brand equity reduce operational risk and accelerate time to profitability across each franchise acquisition.</p>
-          </div>
-        </div>
+      <div class="verticals-grid" id="portfolio-dynamic">
+        <!-- Loaded dynamically from data/portfolio.json -->
       </div>
     </div>
   </section>
@@ -510,6 +479,26 @@
         <h2 class="heading-lg" style="margin-bottom:1rem;">Invest in the Future of Small Business</h2>
         <div class="gold-line"></div>
         <p class="body-md" style="margin-bottom:2.5rem;">We are raising $50,000 to $124,000 via Wefunder Regulation CF. Investors receive a Revenue Share Loan secured by the assets of M.J.E.R.D Enterprise, Inc.</p>
+        <!-- LIVE RAISE PROGRESS -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,52,0.15);border-radius:8px;padding:1.5rem;margin-bottom:2rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+            <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);">Raise Progress</span>
+            <span style="font-size:0.8rem;color:var(--cream-dim);" id="raise-updated">Loading...</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.06);border-radius:100px;height:8px;margin-bottom:0.8rem;overflow:hidden;">
+            <div id="raise-progress-bar" style="height:100%;background:var(--gold);border-radius:100px;width:0%;transition:width 1.5s ease;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);" id="raise-current-amt">$0</div>
+              <div style="font-size:0.72rem;color:var(--cream-dim);letter-spacing:0.1em;text-transform:uppercase;">Raised</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--cream);">$124K</div>
+              <div style="font-size:0.72rem;color:var(--cream-dim);letter-spacing:0.1em;text-transform:uppercase;">Goal</div>
+            </div>
+          </div>
+        </div>
         <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="btn btn-gold" style="margin-bottom:1rem;">Invest on Wefunder →</a><br>
         <a href="investment.html" class="btn btn-outline" style="margin-top:1rem;">View Full Investment Details</a>
       </div>
@@ -578,28 +567,8 @@
       </div>
       <div class="gold-line" style="margin-top:1.5rem;margin-bottom:0;"></div>
 
-      <div class="news-grid">
-        <div class="news-card fade-up fade-up-delay-1">
-          <div class="news-card-body">
-            <div class="news-date">May 2026</div>
-            <h3 class="news-title">M.J.E.R.D Enterprise Launches Wefunder Regulation CF Campaign</h3>
-            <p class="news-excerpt">M.J.E.R.D Enterprise, Inc. officially launches its community investment round on Wefunder, targeting $50,000 to $124,000 to fund its first acquisition.</p>
-          </div>
-        </div>
-        <div class="news-card fade-up fade-up-delay-2">
-          <div class="news-card-body">
-            <div class="news-date">January 2026</div>
-            <h3 class="news-title">M.J.E.R.D Enterprise Completes Delaware C Corporation Conversion</h3>
-            <p class="news-excerpt">The company successfully converts from a Florida LLC to a Delaware C Corporation, establishing the institutional foundation for its multi-vertical acquisition strategy.</p>
-          </div>
-        </div>
-        <div class="news-card fade-up fade-up-delay-3">
-          <div class="news-card-body">
-            <div class="news-date">2025</div>
-            <h3 class="news-title">Ur Gains Fitness Identified as First Acquisition Target</h3>
-            <p class="news-excerpt">M.J.E.R.D Enterprise identifies Ur Gains Fitness as its first acquisition target, generating $61,379.77 in documented gross revenue from January through October 2025.</p>
-          </div>
-        </div>
+      <div class="news-grid" id="news-dynamic">
+        <!-- Loaded dynamically from data/news.json -->
       </div>
     </div>
   </section>

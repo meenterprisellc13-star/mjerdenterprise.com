@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "date": "May 2026",
+      "category": "Fundraising",
+      "title": "M.J.E.R.D Enterprise Launches Wefunder Regulation CF Community Round",
+      "excerpt": "M.J.E.R.D Enterprise, Inc. officially launches its community investment round on Wefunder, targeting between $50,000 and $124,000 under Regulation CF.",
+      "body": "M.J.E.R.D Enterprise, Inc. officially launches its community investment round on Wefunder, targeting between $50,000 and $124,000 under Regulation CF. The raise is structured as a Revenue Share Loan offering investors 3% of gross revenue until they receive a 2.2X return (early bird) or 1.9X return (standard). The minimum investment is $100, making this opportunity accessible to everyday investors who want to participate in small business acquisition from the ground up.",
+      "link": "https://wefunder.com/mjerd.enterprise.inc"
+    },
+    {
+      "id": 2,
+      "date": "January 2026",
+      "category": "Corporate",
+      "title": "M.J.E.R.D Enterprise Completes Delaware C Corporation Conversion",
+      "excerpt": "M.J.E.R.D Enterprise, Inc. successfully converts from a Florida LLC to a Delaware C Corporation, establishing the institutional foundation for its multi-vertical acquisition strategy.",
+      "body": "M.J.E.R.D Enterprise, Inc. successfully converts from M.J.E.R.D Enterprise LLC (Florida) to a Delaware C Corporation, establishing the institutional legal foundation required for its multi-vertical acquisition strategy. The company is foreign-qualified in Florida, headquartered in Boynton Beach, and operates under EIN 41-3584270.",
+      "link": "about.html"
+    },
+    {
+      "id": 3,
+      "date": "2025",
+      "category": "Acquisitions",
+      "title": "Ur Gains Fitness Identified as First Acquisition Target",
+      "excerpt": "M.J.E.R.D Enterprise identifies Ur Gains Fitness as its primary first acquisition target, generating $61,379.77 in documented gross revenue from January through October 2025.",
+      "body": "M.J.E.R.D Enterprise identifies Ur Gains Fitness as its primary first acquisition target in the Fitness & Wellness vertical. The business generated $61,379.77 in documented gross revenue from January through October 2025, demonstrating real operational traction and a loyal customer base in the South Florida market.",
+      "link": "investment.html"
+    },
+    {
+      "id": 4,
+      "date": "2024",
+      "category": "Company",
+      "title": "M.J.E.R.D Enterprise Founded",
+      "excerpt": "Martin J. Dacelin founds M.J.E.R.D Enterprise with a singular vision: to build the Berkshire Hathaway of small business.",
+      "body": "Martin J. Dacelin founds M.J.E.R.D Enterprise with a singular vision: to build a diversified holding company that acquires, optimizes, and scales profitable small businesses across four core verticals — Fitness & Wellness, Automotive, SaaS, and Franchise.",
+      "link": "about.html"
+    }
+  ]
+}
