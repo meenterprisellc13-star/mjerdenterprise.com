@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — M.J.E.R.D Enterprise, Inc.</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      min-height: 55vh; display: flex; align-items: flex-end;
+      padding: calc(var(--nav-h) + 6rem) 2rem 5rem;
+      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, var(--dark) 0%, var(--navy) 60%, var(--navy-mid) 100%);
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 85% 40%, rgba(201,165,52,0.07) 0%, transparent 60%);
+    }
+    .hero-line-left {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      opacity: 0.5;
+    }
+    .page-hero-content { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+    /* WHO WE ARE */
+    .who-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+    }
+
+    .stat-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .stat-block {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,165,52,0.12);
+      border-radius: 8px; padding: 2rem;
+      transition: all 0.3s;
+    }
+    .stat-block:hover { border-color: rgba(201,165,52,0.4); transform: translateY(-3px); }
+
+    .stat-block-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1;
+    }
+    .stat-block-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--cream-dim); margin-top: 0.4rem;
+    }
+
+    /* QUOTE BAND */
+    .quote-band {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,165,52,0.12);
+      border-bottom: 1px solid rgba(201,165,52,0.12);
+      padding: 7rem 2rem; text-align: center;
+    }
+    .quote-band blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      font-style: italic; font-weight: 400;
+      color: var(--cream); line-height: 1.5;
+      max-width: 900px; margin: 0 auto 2rem;
+    }
+    .quote-band blockquote span { color: var(--gold); }
+    .quote-band cite {
+      font-family: 'Barlow', sans-serif; font-style: normal;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold);
+    }
+
+    /* PILLARS */
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+    .pillar {
+      border-top: 2px solid var(--gold); padding-top: 2rem;
+    }
+    .pillar-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 4rem; font-weight: 700;
+      color: rgba(201,165,52,0.1); line-height: 1; margin-bottom: 0.8rem;
+    }
+    .pillar-title {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+    }
+
+    /* LEADERSHIP */
+    .leader-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,165,52,0.15);
+      border-radius: 12px; padding: 4rem;
+      display: grid; grid-template-columns: 260px 1fr; gap: 4rem; align-items: start;
+      margin-top: 4rem;
+    }
+    .leader-photo {
+      width: 100%; aspect-ratio: 1; object-fit: cover; object-position: top;
+      border-radius: 10px;
+      border: 2px solid rgba(201,165,52,0.25);
+    }
+    .leader-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 600; color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+    .leader-title-text {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;
+    }
+    .leader-roles { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+    .role-tag {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+      color: var(--gold); border: 1px solid rgba(201,165,52,0.3);
+      border-radius: 100px; padding: 0.3rem 0.9rem;
+    }
+
+    /* TIMELINE */
+    .timeline { margin-top: 4rem; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .timeline-item { padding: 0 0 3rem 3rem; position: relative; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -4px; top: 6px;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--gold);
+    }
+    .timeline-date {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; color: var(--cream); margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .who-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .leader-card { grid-template-columns: 1fr; }
+      .leader-photo { max-width: 220px; }
+    }
+    @media (max-width: 768px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .stat-grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html"><img src="logo-white.png" alt="M.J.E.R.D Enterprise" class="nav-logo" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="investment.html">Investors</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="nav-cta">Invest Now</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="hero-line-left"></div>
+    <div class="page-hero-content">
+      <span class="label">Our Story</span>
+      <h1 class="display" style="margin-bottom:1rem;">Built to <span style="color:var(--gold);font-style:italic;">Last.</span></h1>
+      <div class="gold-line"></div>
+      <p class="body-lg" style="max-width:560px;">A Delaware C Corporation headquartered in Boynton Beach, Florida — built on the belief that ownership creates legacy.</p>
+    </div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <section class="section">
+    <div class="container">
+      <div class="who-grid">
+        <div class="fade-up">
+          <span class="label">Who We Are</span>
+          <h2 class="heading-lg" style="margin-bottom:1.5rem;">We Are Not Advisors.<br>We Are Owners.</h2>
+          <p class="body-md" style="margin-bottom:1.4rem;">M.J.E.R.D Enterprise, Inc. is a diversified holding company built on one principle — <strong style="color:var(--cream);font-weight:600;">ownership creates legacy.</strong></p>
+          <p class="body-md" style="margin-bottom:1.4rem;">We identify profitable, undervalued businesses across four core verticals, acquire them, install strong financial systems and operational controls, and scale them for sustainable long-term cash flow.</p>
+          <p class="body-md" style="margin-bottom:2rem;">Every acquisition, every decision, and every dollar deployed is made with one mission in mind — building a multi-generational company that creates wealth and opportunity beyond a single lifetime.</p>
+          <a href="investment.html" class="btn btn-gold">View Investment Opportunity →</a>
+        </div>
+        <div class="fade-up fade-up-delay-1">
+          <div class="stat-grid-2">
+            <div class="stat-block">
+              <div class="stat-block-num">4</div>
+              <div class="stat-block-label">Target Verticals</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-block-num">DE</div>
+              <div class="stat-block-label">C Corporation</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-block-num">FL</div>
+              <div class="stat-block-label">Florida HQ</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-block-num">∞</div>
+              <div class="stat-block-label">Generational Vision</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BAND -->
+  <div class="quote-band">
+    <div class="fade-up">
+      <blockquote>"Our vision was born from a desire to build more than businesses — we set out to build a <span>legacy.</span> A legacy of ownership, opportunity, and generational growth that extends beyond one lifetime."</blockquote>
+      <cite>Martin J. Dacelin — Founder &amp; CEO</cite>
+    </div>
+  </div>
+
+  <!-- THREE PILLARS -->
+  <section class="section">
+    <div class="container fade-up">
+      <span class="label">What Drives Us</span>
+      <h2 class="heading-lg">Built on Three Pillars</h2>
+      <div class="gold-line"></div>
+
+      <div class="pillars-grid">
+        <div class="pillar fade-up fade-up-delay-1">
+          <div class="pillar-num">01</div>
+          <div class="pillar-title">Family</div>
+          <p class="body-md">Every business decision is made with future generations in mind. We build assets that outlast us — companies, systems, and structures designed to pass down, not just cash out.</p>
+        </div>
+        <div class="pillar fade-up fade-up-delay-2">
+          <div class="pillar-num">02</div>
+          <div class="pillar-title">Faith</div>
+          <p class="body-md">We operate with integrity, purpose, and conviction. Our strategy is grounded in discipline and guided by a belief that doing things the right way — every time — is the only way.</p>
+        </div>
+        <div class="pillar fade-up fade-up-delay-3">
+          <div class="pillar-num">03</div>
+          <div class="pillar-title">Discipline</div>
+          <p class="body-md">We don't chase trends. We execute a focused acquisition strategy, install operational controls, and build for cash flow — not hype. Patience and precision are our competitive advantage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section" style="padding-top:0;">
+    <div class="container fade-up">
+      <span class="label">Leadership</span>
+      <h2 class="heading-lg">The Founder</h2>
+      <div class="gold-line"></div>
+
+      <div class="leader-card">
+        <img src="headshot.jpg" alt="Martin J. Dacelin" class="leader-photo" />
+        <div>
+          <h3 class="leader-name">Martin J. Dacelin</h3>
+          <p class="leader-title-text">Founder, President &amp; CEO</p>
+          <div class="gold-line" style="margin-top:0;"></div>
+          <p class="body-md" style="margin-bottom:1.2rem;">Martin Dacelin is the Founder and Chief Executive of M.J.E.R.D Enterprise, Inc. — a Delaware C Corporation executing a disciplined, multi-vertical acquisition strategy across Fitness, Automotive, SaaS, and Franchise sectors.</p>
+          <p class="body-md" style="margin-bottom:1.2rem;">With 12+ years of hands-on operational experience and over $1 million in annual sales, Martin brings a proven operator mindset to every acquisition target. He is IT certified, Finance & Accounting certified, a Business graduate, and a Florida State Top 6 Weightlifting Champion — a combination of intellectual discipline and competitive drive that defines how M.J.E.R.D operates.</p>
+          <p class="body-md" style="margin-bottom:1.2rem;">His vision is grounded in a belief that ownership — not employment — is the path to generational wealth. M.J.E.R.D Enterprise was built to be more than a holding company — it is a legacy structure designed to create ownership and opportunity for families beyond a single lifetime.</p>
+          <div class="leader-roles">
+            <span class="role-tag">Founder</span>
+            <span class="role-tag">President</span>
+            <span class="role-tag">CEO</span>
+            <span class="role-tag">Secretary</span>
+            <span class="role-tag">Treasurer</span>
+            <span class="role-tag">Sole Director</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY TIMELINE -->
+  <section class="section" style="padding-top:0;">
+    <div class="container fade-up">
+      <span class="label">Our Journey</span>
+      <h2 class="heading-lg">Company Milestones</h2>
+      <div class="gold-line"></div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <div class="timeline-title">M.J.E.R.D Enterprise Founded</div>
+          <p class="body-sm">Martin Dacelin founds M.J.E.R.D Enterprise with the vision of building the Berkshire Hathaway of small business — a diversified holding company acquiring profitable, undervalued businesses across four core verticals.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2025</div>
+          <div class="timeline-title">Ur Gains Fitness Identified as First Acquisition Target</div>
+          <p class="body-sm">M.J.E.R.D Enterprise identifies Ur Gains Fitness as its primary acquisition target in the Fitness & Wellness vertical. The business generates $61,379.77 in gross revenue from January through October 2025.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">January 2026</div>
+          <div class="timeline-title">Delaware C Corporation Conversion Complete</div>
+          <p class="body-sm">M.J.E.R.D Enterprise successfully converts to a Delaware C Corporation (EIN 41-3584270), establishes the M.J.E.R.D Legacy Trust as the beneficiary structure, and foreign-qualifies in Florida.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">May 2026</div>
+          <div class="timeline-title">Wefunder Regulation CF Campaign Launches</div>
+          <p class="body-sm">M.J.E.R.D Enterprise launches its community investment round on Wefunder, raising between $50,000 and $124,000 via Revenue Share Loan to fund its first acquisition and operational infrastructure.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026 — Target</div>
+          <div class="timeline-title">First Acquisition Close</div>
+          <p class="body-sm">Capital raise closes. M.J.E.R.D Enterprise acquires Ur Gains Fitness, installs financial systems and operational controls, and begins generating portfolio-level cash flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding-top:0;text-align:center;">
+    <div class="container fade-up">
+      <span class="label">Join the Journey</span>
+      <h2 class="heading-lg" style="margin-bottom:1rem;">Invest in What We're Building</h2>
+      <div class="gold-line center"></div>
+      <p class="body-lg" style="max-width:500px;margin:0 auto 3rem;">From $100, you can be part of a legacy that's just getting started. Early bird terms still available on Wefunder.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="btn btn-gold">Invest on Wefunder →</a>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-white.png" alt="M.J.E.R.D Enterprise" />
+        <p>A Delaware C Corporation executing a disciplined, multi-vertical acquisition strategy built for generational wealth.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" class="social-icon">YT</a>
+          <a href="https://x.com/mjerdentinc" target="_blank" class="social-icon">X</a>
+          <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" class="social-icon">IG</a>
+          <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" class="social-icon">FB</a>
+          <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" class="social-icon">TK</a>
+          <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" class="social-icon">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="investment.html">Investors</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Invest</h4>
+        <ul>
+          <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank">Wefunder Campaign</a></li>
+          <li><a href="investment.html">Investment Terms</a></li>
+          <li><a href="investment.html">Pitch Deck</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mjerdenterprise.com">info@mjerdenterprise.com</a></li>
+          <li><a href="tel:5612833309">(561) 283-3309</a></li>
+          <li><a href="#">1540 SW 8th St Unit 1078<br>Boynton Beach, FL 33426</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 M.J.E.R.D Enterprise, Inc. — Delaware Corporation | HQ: Boynton Beach, FL | EIN: 41-3584270</p>
+      <p>Forward-looking statements are not guarantees of future results.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — M.J.E.R.D Enterprise, Inc.</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      min-height: 45vh; display: flex; align-items: flex-end;
+      padding: calc(var(--nav-h) + 5rem) 2rem 4rem;
+      background: linear-gradient(160deg, var(--dark) 0%, var(--navy) 60%, var(--navy-mid) 100%);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 80% at 85% 50%, rgba(201,165,52,0.06) 0%, transparent 60%);
+    }
+    .page-hero-content { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+    /* CONTACT LAYOUT */
+    .contact-layout {
+      max-width: 1200px; margin: 0 auto;
+      padding: 7rem 2rem;
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start;
+    }
+
+    /* INFO SIDE */
+    .contact-info-item {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(201,165,52,0.08);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+
+    .contact-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: rgba(201,165,52,0.1);
+      border: 1px solid rgba(201,165,52,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .contact-info-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+    }
+
+    .contact-info-value {
+      font-size: 0.95rem; color: var(--cream);
+      text-decoration: none; transition: color 0.3s;
+      line-height: 1.6;
+    }
+    a.contact-info-value:hover { color: var(--gold); }
+
+    /* FORM */
+    .contact-form-wrap {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,165,52,0.12);
+      border-radius: 12px; padding: 3.5rem;
+    }
+
+    .form-group { margin-bottom: 1.5rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--cream-dim); margin-bottom: 0.6rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,165,52,0.15);
+      border-radius: 6px; padding: 0.9rem 1.2rem;
+      color: var(--cream); font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem; font-weight: 300;
+      transition: border-color 0.3s, background 0.3s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,165,52,0.04);
+    }
+
+    .form-group select option { background: var(--navy-mid); color: var(--cream); }
+    .form-group textarea { resize: vertical; min-height: 140px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      width: 100%; padding: 1.1rem;
+      background: var(--gold); color: var(--navy);
+      border: none; border-radius: 6px; cursor: pointer;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      transition: all 0.3s; margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,165,52,0.3); }
+
+    .form-note {
+      font-size: 0.78rem; color: var(--cream-dim);
+      text-align: center; margin-top: 1rem; line-height: 1.7;
+    }
+
+    /* SUCCESS MESSAGE */
+    .form-success {
+      display: none; text-align: center; padding: 3rem;
+    }
+    .form-success.show { display: block; }
+    .form-success h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: var(--gold); margin-bottom: 1rem;
+    }
+
+    /* INVESTOR CTA BAND */
+    .invest-band {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,165,52,0.12);
+      padding: 6rem 2rem;
+    }
+    .invest-band-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .invest-band-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html"><img src="logo-white.png" alt="M.J.E.R.D Enterprise" class="nav-logo" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="investment.html">Investors</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="nav-cta">Invest Now</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="label">Get in Touch</span>
+      <h1 class="display" style="margin-bottom:1rem;">Let's <span style="color:var(--gold);font-style:italic;">Connect.</span></h1>
+      <div class="gold-line"></div>
+      <p class="body-lg" style="max-width:500px;">Whether you're an investor, potential partner, or acquisition candidate — we want to hear from you.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT LAYOUT -->
+  <div class="contact-layout">
+
+    <!-- INFO SIDE -->
+    <div class="fade-up">
+      <span class="label">Contact Information</span>
+      <h2 class="heading-lg" style="margin-bottom:0.5rem;">M.J.E.R.D Enterprise, Inc.</h2>
+      <div class="gold-line"></div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-info-label">Address</div>
+          <span class="contact-info-value">1540 SW 8th St Unit 1078<br>Boynton Beach, FL 33426</span>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-info-label">Phone</div>
+          <a href="tel:5612833309" class="contact-info-value">(561) 283-3309</a>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-info-label">Email</div>
+          <a href="mailto:info@mjerdenterprise.com" class="contact-info-value">info@mjerdenterprise.com</a>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">🌐</div>
+        <div>
+          <div class="contact-info-label">Website</div>
+          <a href="https://www.mjerdenterprise.com" class="contact-info-value">www.mjerdenterprise.com</a>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-icon">💼</div>
+        <div>
+          <div class="contact-info-label">Invest</div>
+          <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="contact-info-value">wefunder.com/mjerd.enterprise.inc</a>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <div style="margin-top:2.5rem;">
+        <span class="label">Follow Us</span>
+        <div class="footer-social" style="margin-top:1rem;flex-wrap:wrap;">
+          <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" class="social-icon" title="YouTube">YT</a>
+          <a href="https://x.com/mjerdentinc" target="_blank" class="social-icon" title="X / Twitter">X</a>
+          <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" class="social-icon" title="Instagram">IG</a>
+          <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" class="social-icon" title="Facebook">FB</a>
+          <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" class="social-icon" title="TikTok">TK</a>
+          <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" class="social-icon" title="LinkedIn">LI</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM SIDE -->
+    <div class="fade-up fade-up-delay-1">
+      <div class="contact-form-wrap">
+        <h3 class="heading-md" style="margin-bottom:0.5rem;color:var(--cream);">Send Us a Message</h3>
+        <p class="body-sm" style="margin-bottom:2.5rem;">We respond to all inquiries within 24-48 business hours.</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+          </div>
+
+          <div class="form-group">
+            <label for="inquiry">Inquiry Type</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="" disabled selected>Select inquiry type</option>
+              <option value="investor">Investor Inquiry</option>
+              <option value="partnership">Strategic Partnership</option>
+              <option value="acquisition">Acquisition Opportunity</option>
+              <option value="media">Media / Press</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send Message →</button>
+          <p class="form-note">Your information is kept confidential and will not be shared with third parties.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <h3>Message Received</h3>
+          <p class="body-md">Thank you for reaching out. We'll be in touch within 24-48 business hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVESTOR CTA BAND -->
+  <div class="invest-band">
+    <div class="invest-band-inner">
+      <div class="fade-up">
+        <span class="label">For Investors</span>
+        <h2 class="heading-lg" style="margin-bottom:1rem;">Ready to Invest?</h2>
+        <div class="gold-line"></div>
+        <p class="body-md" style="margin-bottom:2rem;">Don't wait for the perfect moment. Early bird terms are available now on Wefunder. The minimum investment is just $100.</p>
+        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="btn btn-gold">Invest on Wefunder →</a>
+      </div>
+      <div class="fade-up fade-up-delay-1">
+        <div class="card">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--cream-dim);margin-bottom:2rem;">Current raise details</div>
+          <div style="display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(201,165,52,0.08);">
+            <span class="body-sm">Instrument</span>
+            <span style="color:var(--gold);font-weight:600;font-size:0.9rem;">Revenue Share Loan</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(201,165,52,0.08);">
+            <span class="body-sm">Early Bird Return</span>
+            <span style="color:var(--gold);font-weight:600;font-size:0.9rem;">2.2X</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid rgba(201,165,52,0.08);">
+            <span class="body-sm">Revenue Share</span>
+            <span style="color:var(--gold);font-weight:600;font-size:0.9rem;">3% Gross Revenue</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:1rem 0;">
+            <span class="body-sm">Minimum Investment</span>
+            <span style="color:var(--gold);font-weight:600;font-size:0.9rem;">$100</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-white.png" alt="M.J.E.R.D Enterprise" />
+        <p>A Delaware C Corporation executing a disciplined, multi-vertical acquisition strategy built for generational wealth.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" class="social-icon">YT</a>
+          <a href="https://x.com/mjerdentinc" target="_blank" class="social-icon">X</a>
+          <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" class="social-icon">IG</a>
+          <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" class="social-icon">FB</a>
+          <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" class="social-icon">TK</a>
+          <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" class="social-icon">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="investment.html">Investors</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Invest</h4>
+        <ul>
+          <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank">Wefunder Campaign</a></li>
+          <li><a href="investment.html">Investment Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mjerdenterprise.com">info@mjerdenterprise.com</a></li>
+          <li><a href="tel:5612833309">(561) 283-3309</a></li>
+          <li><a href="#">1540 SW 8th St Unit 1078<br>Boynton Beach, FL 33426</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 M.J.E.R.D Enterprise, Inc. — Delaware Corporation | HQ: Boynton Beach, FL</p>
+      <p>Forward-looking statements are not guarantees of future results.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('show');
+    }
+  </script>
+</body>
+</html>

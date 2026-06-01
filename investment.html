@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invest — M.J.E.R.D Enterprise, Inc.</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      min-height: 50vh; display: flex; align-items: flex-end;
+      padding: calc(var(--nav-h) + 6rem) 2rem 5rem;
+      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, var(--dark) 0%, var(--navy) 60%, var(--navy-mid) 100%);
+    }
+
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,165,52,0.07) 0%, transparent 60%);
+    }
+
+    .page-hero-content { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+    /* ── WHY NOW ── */
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+
+    .why-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,165,52,0.12);
+      border-radius: 8px; padding: 2.5rem;
+      position: relative; overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .why-card:hover { border-color: rgba(201,165,52,0.4); transform: translateY(-4px); }
+
+    .why-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--gold);
+    }
+
+    .why-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+
+    /* ── TERMS TABLE ── */
+    .terms-table { width: 100%; border-collapse: collapse; margin-top: 3rem; }
+
+    .terms-table tr { border-bottom: 1px solid rgba(201,165,52,0.08); }
+    .terms-table tr:last-child { border-bottom: none; }
+
+    .terms-table td { padding: 1.4rem 1rem; }
+    .terms-table td:first-child {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--cream-dim); width: 40%;
+    }
+    .terms-table td:last-child {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; color: var(--gold); font-weight: 600;
+    }
+
+    /* ── PROJECTIONS ── */
+    .proj-table { width: 100%; border-collapse: collapse; margin-top: 3rem; border-radius: 8px; overflow: hidden; }
+    .proj-table th {
+      background: var(--navy-mid); padding: 1rem 1.5rem;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); text-align: left;
+    }
+    .proj-table td { padding: 1.2rem 1.5rem; font-size: 0.95rem; }
+    .proj-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .proj-table tr:nth-child(odd) td { background: var(--navy-card); }
+    .proj-table td:first-child { font-weight: 600; color: var(--cream); }
+    .proj-table td:not(:first-child) { color: var(--cream-dim); }
+
+    /* ── PERKS ── */
+    .perks-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 3rem; }
+
+    .perk-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(201,165,52,0.12);
+      border-radius: 8px; padding: 2rem 1.5rem;
+      text-align: center; transition: all 0.3s;
+    }
+
+    .perk-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+
+    .perk-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700; color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .perk-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); margin-bottom: 0.8rem; }
+    .perk-desc { font-size: 0.8rem; color: var(--cream-dim); line-height: 1.7; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--navy-mid) 100%);
+      border-top: 1px solid rgba(201,165,52,0.15);
+      padding: 8rem 2rem; text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .perks-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html"><img src="logo-white.png" alt="M.J.E.R.D Enterprise" class="nav-logo" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="investment.html" class="active">Investors</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="nav-cta">Invest Now</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <span class="label">Investor Relations</span>
+      <h1 class="display" style="margin-bottom:1rem;">Invest in <span style="color:var(--gold);font-style:italic;">Legacy.</span></h1>
+      <div class="gold-line"></div>
+      <p class="body-lg" style="max-width:560px;">Be part of the earliest stage of a disciplined, multi-vertical acquisition company built for generational wealth. Minimum investment: $100.</p>
+    </div>
+  </div>
+
+  <!-- WHY NOW -->
+  <section class="section">
+    <div class="container">
+      <div class="fade-up">
+        <span class="label">Why Invest Now</span>
+        <h2 class="heading-lg">The Case for M.J.E.R.D</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card fade-up fade-up-delay-1">
+          <div class="why-icon">📈</div>
+          <h3 class="heading-md" style="margin-bottom:0.8rem;">Early Stage Advantage</h3>
+          <p class="body-sm">You're investing before the first acquisition closes and before the valuation reflects what this company is building toward. The earliest investors always have the most upside.</p>
+        </div>
+        <div class="why-card fade-up fade-up-delay-2">
+          <div class="why-icon">💰</div>
+          <h3 class="heading-md" style="margin-bottom:0.8rem;">Real Revenue. Real Business.</h3>
+          <p class="body-sm">Our identified acquisition target, Ur Gains Fitness, generated $61,379.77 in documented gross revenue from January to October 2025. This is not a concept — it's a proven operation.</p>
+        </div>
+        <div class="why-card fade-up fade-up-delay-3">
+          <div class="why-icon">🏛️</div>
+          <h3 class="heading-md" style="margin-bottom:0.8rem;">Institutional Structure</h3>
+          <p class="body-sm">Delaware C Corporation. EIN registered. Foreign-qualified in Florida. M.J.E.R.D Legacy Trust as beneficiary. Built with the same legal foundation as major holding companies.</p>
+        </div>
+        <div class="why-card fade-up fade-up-delay-1">
+          <div class="why-icon">🔒</div>
+          <h3 class="heading-md" style="margin-bottom:0.8rem;">Secured Investment</h3>
+          <p class="body-sm">Your Revenue Share Loan is secured by the assets of M.J.E.R.D Enterprise, Inc. Unlike equity, you receive revenue payments regardless of an exit event.</p>
+        </div>
+        <div class="why-card fade-up fade-up-delay-2">
+          <div class="why-icon">⚙️</div>
+          <h3 class="heading-md" style="margin-bottom:0.8rem;">Operator Mindset</h3>
+          <p class="body-sm">Founder Martin Dacelin brings 12+ years of hands-on operational experience, $1M+ in annual sales, and a proven track record of turning around struggling businesses.</p>
+        </div>
+        <div class="why-card fade-up fade-up-delay-3">
+          <div class="why-icon">🌱</div>
+          <h3 class="heading-md" style="margin-bottom:0.8rem;">Built for Cash Flow</h3>
+          <p class="body-sm">M.J.E.R.D is not chasing an IPO. We are building a portfolio of profitable, cash-flowing businesses that generate returns year over year — exactly what a Revenue Share investor wants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTMENT TERMS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="fade-up">
+        <span class="label">Investment Terms</span>
+        <h2 class="heading-lg">How You Get Paid Back</h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;" class="fade-up">
+        <div class="card">
+          <h3 class="heading-md" style="color:var(--gold);margin-bottom:0.5rem;">Early Bird Terms</h3>
+          <p class="body-sm" style="margin-bottom:1.5rem;">First $100,000 invested receives VIP early bird terms.</p>
+          <table class="terms-table">
+            <tr><td>Instrument</td><td>Revenue Share Loan</td></tr>
+            <tr><td>Revenue Share</td><td>3% of Gross Revenue</td></tr>
+            <tr><td>Payback Multiple</td><td>2.2X</td></tr>
+            <tr><td>Minimum</td><td>$100</td></tr>
+            <tr><td>Secured By</td><td>Company Assets</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3 class="heading-md" style="color:var(--cream);margin-bottom:0.5rem;">Standard Terms</h3>
+          <p class="body-sm" style="margin-bottom:1.5rem;">Applied after the first $100,000 early bird allocation is filled.</p>
+          <table class="terms-table">
+            <tr><td>Instrument</td><td>Revenue Share Loan</td></tr>
+            <tr><td>Revenue Share</td><td>3% of Gross Revenue</td></tr>
+            <tr><td>Payback Multiple</td><td>1.9X</td></tr>
+            <tr><td>Minimum</td><td>$100</td></tr>
+            <tr><td>Secured By</td><td>Company Assets</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL PROJECTIONS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container fade-up">
+      <span class="label">Financial Outlook</span>
+      <h2 class="heading-lg">Growth Projections</h2>
+      <div class="gold-line"></div>
+      <p class="body-md" style="max-width:680px;margin-bottom:0;">Forward-looking targets based on planned acquisitions and capital deployment. Conservative estimates driven by disciplined execution — not a guarantee of future results.</p>
+
+      <table class="proj-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>2026</th>
+            <th>2027</th>
+            <th>2028</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Revenue</td><td>$2.3M</td><td>$5.6M</td><td>$10.9M</td></tr>
+          <tr><td>Net Operating Income</td><td>$410K</td><td>$990K</td><td>$2.03M</td></tr>
+          <tr><td>NOI Margin</td><td>17.8%</td><td>17.7%</td><td>18.6%</td></tr>
+          <tr><td>Portfolio Companies</td><td>4</td><td>8</td><td>12</td></tr>
+          <tr><td>Employees</td><td>8</td><td>19</td><td>36</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- INVESTOR PERKS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container fade-up">
+      <span class="label">Investor Perks</span>
+      <h2 class="heading-lg">Rewards for Believers</h2>
+      <div class="gold-line"></div>
+
+      <div class="perks-grid">
+        <div class="perk-card">
+          <div class="perk-amount">$100</div>
+          <div class="perk-title">Supporter</div>
+          <div class="perk-desc">Early investor recognition + M.J.E.R.D digital certificate</div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-amount">$500</div>
+          <div class="perk-title">Builder</div>
+          <div class="perk-desc">All above + quarterly investor update emails</div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-amount">$1K</div>
+          <div class="perk-title">Operator</div>
+          <div class="perk-desc">All above + annual portfolio performance report</div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-amount">$2.5K</div>
+          <div class="perk-title">Partner</div>
+          <div class="perk-desc">All above + direct access to founder Q&A sessions</div>
+        </div>
+        <div class="perk-card">
+          <div class="perk-amount">$5K</div>
+          <div class="perk-title">Legacy</div>
+          <div class="perk-desc">All above + priority access to future investment rounds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE OF FUNDS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container fade-up">
+      <span class="label">Use of Funds</span>
+      <h2 class="heading-lg">How Capital Gets Deployed</h2>
+      <div class="gold-line"></div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;">
+        <div class="card" style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;">60%</div>
+          <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.6rem;">$74,400</div>
+          <div class="body-sm">Acquisition capital for first deal — Ur Gains Fitness</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;">20%</div>
+          <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.6rem;">$24,800</div>
+          <div class="body-sm">Working capital and operations during transition</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;">10%</div>
+          <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.6rem;">$12,400</div>
+          <div class="body-sm">Legal, accounting, and deal structuring fees</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold);font-weight:700;">10%</div>
+          <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream);margin-bottom:0.6rem;">$12,400</div>
+          <div class="body-sm">Technology, reporting tools, and compliance</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section class="section" style="padding-top:0;">
+    <div class="container fade-up">
+      <span class="label">Founder Pitch</span>
+      <h2 class="heading-lg" style="margin-bottom:1rem;">Hear From Martin Dacelin</h2>
+      <div class="gold-line"></div>
+      <p class="body-md" style="max-width:580px;margin-bottom:3rem;">Watch the founder explain our first acquisition target, the investment opportunity, and why now is the right time to get in early.</p>
+      <div style="position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;border:1px solid rgba(201,165,52,0.15);">
+        <iframe
+          src="https://www.youtube.com/embed/5XsscwUU44U"
+          title="Our First Target — M.J.E.R.D Enterprise"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="fade-up">
+      <span class="label" style="justify-content:center;display:flex;">Ready to Invest?</span>
+      <h2 class="heading-lg" style="margin-bottom:1rem;">Join the M.J.E.R.D Legacy</h2>
+      <div class="gold-line center"></div>
+      <p class="body-lg" style="max-width:500px;margin:0 auto 3rem;">Minimum $100. Early bird terms available now. Be part of building generational wealth from the ground up.</p>
+      <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="btn btn-gold" style="font-size:1rem;padding:1.1rem 3rem;">Invest on Wefunder Now →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="logo-white.png" alt="M.J.E.R.D Enterprise" />
+        <p>A Delaware C Corporation executing a disciplined, multi-vertical acquisition strategy built for generational wealth.</p>
+        <div class="footer-social">
+          <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" class="social-icon">YT</a>
+          <a href="https://x.com/mjerdentinc" target="_blank" class="social-icon">X</a>
+          <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" class="social-icon">IG</a>
+          <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" class="social-icon">FB</a>
+          <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" class="social-icon">TK</a>
+          <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" class="social-icon">LI</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="investment.html">Investors</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Invest</h4>
+        <ul>
+          <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank">Wefunder Campaign</a></li>
+          <li><a href="investment.html">Investment Terms</a></li>
+          <li><a href="investment.html">Pitch Deck</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@mjerdenterprise.com">info@mjerdenterprise.com</a></li>
+          <li><a href="tel:5612833309">(561) 283-3309</a></li>
+          <li><a href="#">1540 SW 8th St Unit 1078<br>Boynton Beach, FL 33426</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 M.J.E.R.D Enterprise, Inc. — Delaware Corporation | HQ: Boynton Beach, FL</p>
+      <p>Forward-looking statements are not guarantees of future results.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
