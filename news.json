@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "date": "May 2026",
+      "category": "Fundraising",
+      "title": "M.J.E.R.D Enterprise Launches Wefunder Regulation CF Campaign",
+      "excerpt": "M.J.E.R.D Enterprise, Inc. officially launches its community investment round on Wefunder, targeting $50,000 to $124,000 under Regulation CF.",
+      "body": "M.J.E.R.D Enterprise, Inc. officially launches its community investment round on Wefunder, targeting between $50,000 and $124,000 under Regulation CF. The raise is structured as a Revenue Share Loan offering investors 3% of gross revenue until they receive a 2.2X return (early bird) or 1.9X return (standard). Minimum investment is $100.",
+      "link": "https://wefunder.com/mjerd.enterprise.inc"
+    },
+    {
+      "id": 2,
+      "date": "January 2026",
+      "category": "Corporate",
+      "title": "M.J.E.R.D Enterprise Completes Delaware C-Corporation Conversion",
+      "excerpt": "M.J.E.R.D Enterprise, Inc. successfully converts to a Delaware C-Corporation, establishing the institutional legal foundation for its acquisition strategy.",
+      "body": "M.J.E.R.D Enterprise, Inc. successfully converts from a Florida LLC to a Delaware C-Corporation (EIN: 41-3584270). The company foreign-qualifies in Florida and establishes the M.J.E.R.D Legacy Trust as the umbrella beneficiary structure. Headquarters remain in Boynton Beach, Florida.",
+      "link": "about.html"
+    },
+    {
+      "id": 3,
+      "date": "2025",
+      "category": "Acquisitions",
+      "title": "Ur Gains Fitness Identified as First Acquisition Target",
+      "excerpt": "M.J.E.R.D Enterprise identifies Ur Gains Fitness as its primary acquisition target with $61,379.77 in documented gross revenue Jan-Oct 2025.",
+      "body": "M.J.E.R.D Enterprise identifies Ur Gains Fitness as its primary first acquisition target in the Fitness and Wellness vertical. The business generated $61,379.77 in documented gross revenue from January through October 2025. Capital raised through the Wefunder campaign will be deployed toward closing this acquisition.",
+      "link": "investment.html"
+    },
+    {
+      "id": 4,
+      "date": "2024",
+      "category": "Company",
+      "title": "M.J.E.R.D Enterprise Founded",
+      "excerpt": "Martin J. Dacelin founds M.J.E.R.D Enterprise with a vision to build a diversified holding company across four core verticals.",
+      "body": "Martin J. Dacelin founds M.J.E.R.D Enterprise with a singular vision: to build the Berkshire Hathaway of small business — a diversified holding company acquiring profitable, undervalued businesses across Fitness and Wellness, Automotive, SaaS, and Franchise verticals.",
+      "link": "about.html"
+    }
+  ]
+}

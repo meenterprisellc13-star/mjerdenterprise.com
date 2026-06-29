@@ -1,167 +1,168 @@
-// M.J.E.R.D Enterprise — Main JS
+/* M.J.E.R.D Enterprise — main.js v2 */
 
-// ── SCROLL ANIMATIONS ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(el => {
-    if (el.isIntersecting) el.target.classList.add('visible');
+/* ── SCROLL ANIMATIONS ── */
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+/* ── MOBILE NAV ── */
+const burger  = document.querySelector('.nav__hamburger');
+const navMenu = document.querySelector('.nav__links');
+if (burger && navMenu) {
+  burger.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
   });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-// ── MOBILE NAV ──
-const hamburger = document.querySelector('.nav-hamburger');
-const navLinks  = document.querySelector('.nav-links');
-if (hamburger) {
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav') && navMenu.classList.contains('open')) {
+      navMenu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    }
+  });
 }
 
-// ── ACTIVE NAV LINK ──
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(link => {
-  if (link.getAttribute('href') === currentPage) link.classList.add('active');
+/* ── ACTIVE NAV LINK ── */
+const page = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav__links a').forEach(a => {
+  const href = a.getAttribute('href');
+  if (href === page || (page === '' && href === 'index.html')) a.classList.add('active');
 });
 
-// ── COUNTER ANIMATION ──
-function animateCounter(el) {
-  const raw    = el.dataset.target;
-  const target = parseFloat(raw);
-  const prefix = el.dataset.prefix || '';
-  const suffix = el.dataset.suffix || '';
-  const isInt  = Number.isInteger(target);
+/* ── COUNTER ANIMATION ── */
+function runCounter(el) {
+  const target   = parseFloat(el.dataset.target);
+  const prefix   = el.dataset.prefix  || '';
+  const suffix   = el.dataset.suffix  || '';
+  const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
   const duration = 2000;
-  const start  = performance.now();
-
-  function update(time) {
-    const progress = Math.min((time - start) / duration, 1);
-    const eased    = 1 - Math.pow(1 - progress, 3);
-    const current  = target * eased;
-    el.textContent = prefix + (isInt ? Math.floor(current).toLocaleString() : current.toFixed(1)) + suffix;
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  requestAnimationFrame(update);
+  const t0 = performance.now();
+  const tick = now => {
+    const p = Math.min((now - t0) / duration, 1);
+    const v = target * (1 - Math.pow(1 - p, 3));
+    el.textContent = prefix + (decimals ? v.toFixed(decimals) : Math.floor(v).toLocaleString()) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
 }
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(el => {
-    if (el.isIntersecting && !el.target.dataset.animated) {
-      el.target.dataset.animated = true;
-      animateCounter(el.target);
+const ctrObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.ran) {
+      e.target.dataset.ran = '1';
+      runCounter(e.target);
     }
   });
 }, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+document.querySelectorAll('.counter').forEach(el => ctrObs.observe(el));
 
-// ── DATA LOADER ──
-async function loadJSON(path) {
+/* ── DATA LOADER ── */
+async function fetchJSON(path) {
   try {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error('Not found');
-    return await res.json();
-  } catch (e) {
-    console.warn('Could not load', path, e);
+    const r = await fetch(path + '?v=' + Date.now());
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } catch(e) {
+    console.warn('[MJERD] Could not load', path, e.message);
     return null;
   }
 }
 
-// ── WEFUNDER PROGRESS BAR ──
-async function loadRaiseProgress() {
-  const bar = document.getElementById('raise-progress-bar');
-  const amt = document.getElementById('raise-current-amt');
-  const pct = document.getElementById('raise-pct');
+/* ── RAISE PROGRESS BAR ── */
+async function initProgressBar() {
+  const bar   = document.getElementById('raise-bar');
+  const amt   = document.getElementById('raise-amt');
+  const pctEl = document.getElementById('raise-pct');
+  const upd   = document.getElementById('raise-updated');
   if (!bar) return;
 
-  const data = await loadJSON('data/portfolio.json');
+  const data = await fetchJSON('data/portfolio.json');
   if (!data) return;
 
-  const { raise_current, raise_target, raise_minimum, last_updated } = data.stats;
-  const percent = Math.min((raise_current / raise_target) * 100, 100).toFixed(1);
+  const { raise_current = 0, raise_target = 124000, last_updated = '' } = data.stats;
+  const pct = Math.min((raise_current / raise_target) * 100, 100);
 
-  if (amt) amt.textContent = '$' + raise_current.toLocaleString();
-  if (pct) pct.textContent = percent + '%';
-  if (bar) {
-    bar.style.width = '0%';
-    setTimeout(() => { bar.style.width = percent + '%'; }, 300);
-  }
-
-  const updatedEl = document.getElementById('raise-updated');
-  if (updatedEl) updatedEl.textContent = 'Last updated: ' + last_updated;
+  if (amt)   amt.textContent   = '$' + raise_current.toLocaleString();
+  if (pctEl) pctEl.textContent = pct.toFixed(1) + '%';
+  if (upd)   upd.textContent   = 'Updated: ' + last_updated;
+  setTimeout(() => { bar.style.width = pct + '%'; }, 400);
 }
 
-// ── DYNAMIC NEWS ──
-async function loadNews() {
-  const container = document.getElementById('news-dynamic');
-  if (!container) return;
-
-  const data = await loadJSON('data/news.json');
+/* ── DYNAMIC NEWS (homepage preview) ── */
+async function initNewsPreview() {
+  const wrap = document.getElementById('news-preview');
+  if (!wrap) return;
+  const data = await fetchJSON('data/news.json');
   if (!data) return;
 
-  const posts = data.posts.slice(0, 3); // show latest 3
-  container.innerHTML = posts.map(post => `
-    <div class="news-card fade-up">
-      <div class="news-card-body">
-        <div class="news-date">${post.category} — ${post.date}</div>
-        <h3 class="news-title">${post.title}</h3>
-        <p class="news-excerpt">${post.excerpt}</p>
-        <a href="${post.link}" class="read-more" style="font-size:0.78rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Read More →</a>
-      </div>
-    </div>
-  `).join('');
+  wrap.innerHTML = data.posts.slice(0, 3).map(p => `
+    <article class="news-card card fade-up" aria-label="${p.title}">
+      <div class="tag ${p.category === 'Acquisitions' ? 'tag--gold' : 'tag--dim'}" style="margin-bottom:1rem">${p.category}</div>
+      <p class="body-sm" style="color:var(--gold);margin-bottom:0.5rem">${p.date}</p>
+      <h3 class="h3" style="font-size:1.2rem;margin-bottom:0.8rem">${p.title}</h3>
+      <p class="body-sm" style="margin-bottom:1.2rem">${p.excerpt}</p>
+      <a href="${p.link}" class="btn btn--ghost" style="font-size:0.68rem;padding:0.5rem 1rem">Read more →</a>
+    </article>`).join('');
 
-  // Re-observe new elements
-  container.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  wrap.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 }
 
-// ── DYNAMIC PORTFOLIO ──
-async function loadPortfolio() {
-  const container = document.getElementById('portfolio-dynamic');
-  if (!container) return;
-
-  const data = await loadJSON('data/portfolio.json');
+/* ── DYNAMIC PORTFOLIO (homepage verticals) ── */
+async function initPortfolio() {
+  const wrap = document.getElementById('verticals-grid');
+  if (!wrap) return;
+  const data = await fetchJSON('data/portfolio.json');
   if (!data) return;
 
-  container.innerHTML = data.verticals.map(v => `
+  wrap.innerHTML = data.verticals.map(v => `
     <div class="vertical-card fade-up">
-      <div class="vertical-icon">${v.icon}</div>
+      <div class="vertical-icon" aria-hidden="true">${v.icon}</div>
       <div>
-        <span class="vertical-status ${v.status === 'active' ? 'status-active' : 'status-pipeline'}">${v.status_label}</span>
-        <h3 class="heading-md" style="margin-bottom:0.6rem;">${v.name}</h3>
+        <span class="tag ${v.status === 'active' ? 'tag--gold' : 'tag--dim'}" style="margin-bottom:0.7rem;display:inline-block">${v.status_label}</span>
+        <h3 class="h3" style="margin-bottom:0.6rem">${v.name}</h3>
         <p class="body-sm">${v.description}</p>
       </div>
-    </div>
-  `).join('');
+    </div>`).join('');
 
-  container.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  wrap.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 }
 
-// ── DYNAMIC FULL NEWS PAGE ──
-async function loadFullNews() {
-  const container = document.getElementById('news-full');
-  if (!container) return;
-
-  const data = await loadJSON('data/news.json');
+/* ── DYNAMIC FULL NEWS PAGE ── */
+async function initNewsPage() {
+  const wrap = document.getElementById('news-full');
+  if (!wrap) return;
+  const data = await fetchJSON('data/news.json');
   if (!data) return;
 
-  container.innerHTML = data.posts.map(post => `
-    <article class="news-article fade-up">
-      <div class="news-article-body">
-        <div class="news-meta">
-          <span class="news-category">${post.category}</span>
-          <span class="news-date-text">${post.date}</span>
-        </div>
-        <h2 class="news-article-title">${post.title}</h2>
-        <p class="news-article-excerpt">${post.body}</p>
-        <a href="${post.link}" class="read-more">Read More →</a>
+  wrap.innerHTML = data.posts.map(p => `
+    <article class="news-article card fade-up" style="margin-bottom:1.5rem">
+      <div style="display:flex;gap:1rem;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap">
+        <span class="tag tag--gold">${p.category}</span>
+        <span class="body-sm">${p.date}</span>
       </div>
-    </article>
-  `).join('');
+      <h2 class="h2" style="font-size:1.6rem;margin-bottom:1rem">${p.title}</h2>
+      <p class="body-md" style="margin-bottom:1.5rem">${p.body}</p>
+      <a href="${p.link}" class="btn btn--ghost" style="font-size:0.7rem;padding:0.55rem 1.2rem">Learn more →</a>
+    </article>`).join('');
 
-  container.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  wrap.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 }
 
-// ── INIT ──
+/* ── CONTACT FORM ── */
+const form = document.getElementById('contact-form');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('form-body').style.display  = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+}
+
+/* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
-  loadRaiseProgress();
-  loadNews();
-  loadPortfolio();
-  loadFullNews();
+  initProgressBar();
+  initNewsPreview();
+  initPortfolio();
+  initNewsPage();
 });

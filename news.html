@@ -1,206 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>News — M.J.E.R.D Enterprise, Inc.</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .page-hero {
-      min-height: 45vh; display: flex; align-items: flex-end;
-      padding: calc(var(--nav-h) + 5rem) 2rem 4rem;
-      background: linear-gradient(160deg, var(--dark) 0%, var(--navy) 60%, var(--navy-mid) 100%);
-      position: relative; overflow: hidden;
-    }
-    .page-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 50% 80% at 90% 50%, rgba(201,165,52,0.06) 0%, transparent 60%);
-    }
-    .page-hero-content { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; }
-
-    .news-layout {
-      max-width: 1200px; margin: 0 auto; padding: 6rem 2rem;
-      display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;
-    }
-
-    .news-main { }
-    .news-sidebar { }
-
-    .news-article {
-      background: var(--navy-card);
-      border: 1px solid rgba(201,165,52,0.1);
-      border-radius: 8px; overflow: hidden;
-      margin-bottom: 2rem; transition: all 0.3s;
-    }
-    .news-article:hover { border-color: rgba(201,165,52,0.3); transform: translateY(-2px); }
-
-    .news-article-body { padding: 2.5rem; }
-
-    .news-meta {
-      display: flex; gap: 1.5rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;
-    }
-
-    .news-category {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--navy); background: var(--gold);
-      padding: 0.25rem 0.8rem; border-radius: 100px;
-    }
-
-    .news-date-text { font-size: 0.8rem; color: var(--cream-dim); }
-
-    .news-article-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem; font-weight: 600; color: var(--cream);
-      line-height: 1.2; margin-bottom: 1rem;
-    }
-
-    .news-article-excerpt { font-size: 0.95rem; color: var(--cream-dim); line-height: 1.9; margin-bottom: 1.5rem; }
-
-    .read-more {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--gold); text-decoration: none;
-      transition: opacity 0.3s;
-    }
-    .read-more:hover { opacity: 0.7; }
-
-    /* Sidebar */
-    .sidebar-widget {
-      background: var(--navy-card);
-      border: 1px solid rgba(201,165,52,0.1);
-      border-radius: 8px; padding: 2rem; margin-bottom: 2rem;
-    }
-
-    .sidebar-widget h3 {
-      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
-    }
-
-    .sidebar-link {
-      display: block; padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(201,165,52,0.08);
-      color: var(--cream-dim); text-decoration: none;
-      font-size: 0.88rem; transition: color 0.3s;
-    }
-    .sidebar-link:last-child { border-bottom: none; }
-    .sidebar-link:hover { color: var(--gold); }
-
-    @media (max-width: 768px) {
-      .news-layout { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Latest news, milestones, and updates from M.J.E.R.D Enterprise, Inc."/>
+<meta property="og:title" content="News — M.J.E.R.D Enterprise, Inc."/>
+<meta property="og:description" content="Latest news, milestones, and updates from M.J.E.R.D Enterprise, Inc."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://mjerdenterprise.com/news.html"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://mjerdenterprise.com/news.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="style.css"/>
+<title>News — M.J.E.R.D Enterprise, Inc.</title>
+<style>
+@media(max-width:768px){section .container>div{grid-template-columns:1fr!important;gap:2.5rem!important}}
+</style>
 </head>
 <body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" aria-label="M.J.E.R.D Enterprise home"><img src="logo-white.png" alt="M.J.E.R.D Enterprise, Inc." class="nav__logo" width="140" height="46" loading="eager"/></a>
+  <ul class="nav__links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li class="nav__dropdown"><a href="about.html" aria-haspopup="true">Company &#9660;</a>
+      <ul class="nav__dropdown-menu" role="list">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#governance">Governance &amp; Values</a></li>
+        <li><a href="about.html#structure">Corporate Structure</a></li>
+      </ul>
+    </li>
+    <li class="nav__dropdown"><a href="strategic-focus.html" aria-haspopup="true">Strategy &#9660;</a>
+      <ul class="nav__dropdown-menu" role="list">
+        <li><a href="strategic-focus.html">Strategic Focus</a></li>
+        <li><a href="acquisition-criteria.html">Acquisition Criteria</a></li>
+        <li><a href="capital-allocation.html">Capital Allocation</a></li>
+      </ul>
+    </li>
+    <li><a href="investment.html">Investors</a></li>
+    <li><a href="news.html" class="active">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="nav__cta">Invest Now</a></li>
+  </ul>
+  <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="stage-banner" role="note"><p>Current Stage: Capital Formation &amp; Acquisition Pipeline <span>&#8212; No portfolio companies have been acquired to date.</span></p></div>
+<main id="main-content">
 
-  <nav>
-    <a href="index.html"><img src="logo-white.png" alt="M.J.E.R.D Enterprise" class="nav-logo" /></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="investment.html">Investors</a></li>
-      <li><a href="news.html" class="active">News</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="nav-cta">Invest Now</a></li>
-    </ul>
-    <div class="nav-hamburger"><span></span><span></span><span></span></div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="page-hero-content">
-      <span class="label">Company Updates</span>
-      <h1 class="display" style="margin-bottom:1rem;">News &amp; <span style="color:var(--gold);font-style:italic;">Updates</span></h1>
-      <div class="gold-line"></div>
-      <p class="body-lg" style="max-width:500px;">Stay current with M.J.E.R.D Enterprise's latest milestones, announcements, and acquisition activity.</p>
-    </div>
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <span class="label">Company Updates</span>
+    <h1 class="h1" style="margin-bottom:1rem">News &amp; <span class="gold-text" style="font-style:italic">Updates</span></h1>
+    <div class="gold-rule"></div>
+    <p class="body-lg" style="max-width:500px">Stay current with M.J.E.R.D Enterprise&#8217;s latest milestones, announcements, and acquisition activity.</p>
   </div>
+</div>
 
-  <div class="news-layout">
-    <main class="news-main" id="news-full">
-      <!-- Loaded dynamically from data/news.json -->
-    </main>
-
-    <aside class="news-sidebar">
-      <div class="sidebar-widget fade-up">
-        <h3>Quick Links</h3>
-        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="sidebar-link">→ Invest on Wefunder</a>
-        <a href="investment.html" class="sidebar-link">→ Investment Terms</a>
-        <a href="about.html" class="sidebar-link">→ About M.J.E.R.D</a>
-        <a href="contact.html" class="sidebar-link">→ Contact Us</a>
+<section class="section">
+  <div class="container" style="display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start">
+    <div id="news-full" aria-label="Company news" aria-live="polite">
+      <div class="card" style="text-align:center;padding:4rem"><p class="body-sm">Loading news&#8230;</p></div>
+    </div>
+    <aside aria-label="News sidebar">
+      <div class="card" style="margin-bottom:1.5rem">
+        <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem">Quick Links</h3>
+        <nav aria-label="Quick links">
+          <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="body-sm" style="display:block;padding:.7rem 0;border-bottom:1px solid rgba(201,165,52,.07);color:var(--cream-dim);transition:color .3s" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--gold')" onmouseout="this.style.color=''">&#8594; Invest on Wefunder</a>
+          <a href="investment.html" class="body-sm" style="display:block;padding:.7rem 0;border-bottom:1px solid rgba(201,165,52,.07);color:var(--cream-dim)" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--gold')" onmouseout="this.style.color=''">&#8594; Investment Terms</a>
+          <a href="acquisition-criteria.html" class="body-sm" style="display:block;padding:.7rem 0;border-bottom:1px solid rgba(201,165,52,.07);color:var(--cream-dim)" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--gold')" onmouseout="this.style.color=''">&#8594; Acquisition Criteria</a>
+          <a href="contact.html" class="body-sm" style="display:block;padding:.7rem 0;color:var(--cream-dim)" onmouseover="this.style.color=getComputedStyle(document.documentElement).getPropertyValue('--gold')" onmouseout="this.style.color=''">&#8594; Contact Us</a>
+        </nav>
       </div>
-
-      <div class="sidebar-widget fade-up">
-        <h3>Company Facts</h3>
-        <a class="sidebar-link">Delaware C Corporation</a>
-        <a class="sidebar-link">EIN: 41-3584270</a>
-        <a class="sidebar-link">Founded: 2024</a>
-        <a class="sidebar-link">HQ: Boynton Beach, FL</a>
-        <a class="sidebar-link">4 Target Verticals</a>
+      <div class="card" style="margin-bottom:1.5rem">
+        <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem">Company Facts</h3>
+        <p class="body-sm" style="margin-bottom:.5rem">Delaware C-Corporation</p>
+        <p class="body-sm" style="margin-bottom:.5rem">EIN: 41-3584270</p>
+        <p class="body-sm" style="margin-bottom:.5rem">Founded: 2024</p>
+        <p class="body-sm" style="margin-bottom:.5rem">HQ: Boynton Beach, FL</p>
+        <p class="body-sm">4 Target Verticals</p>
       </div>
-
-      <div class="sidebar-widget fade-up" style="background:rgba(201,165,52,0.08);border-color:rgba(201,165,52,0.3);">
-        <h3>Current Raise</h3>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);font-weight:700;margin-bottom:0.5rem;">$124K</div>
-        <div class="body-sm" style="margin-bottom:1.5rem;">Maximum raise via Wefunder Reg CF. Early bird terms available now.</div>
-        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" class="btn btn-gold" style="width:100%;justify-content:center;">Invest Now →</a>
-      </div>
-
-      <div class="sidebar-widget fade-up">
-        <h3>Follow Us</h3>
-        <div class="footer-social" style="flex-wrap:wrap;">
-          <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" class="social-icon">YT</a>
-          <a href="https://x.com/mjerdentinc" target="_blank" class="social-icon">X</a>
-          <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" class="social-icon">IG</a>
-          <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" class="social-icon">FB</a>
-          <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" class="social-icon">TK</a>
-          <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" class="social-icon">LI</a>
-        </div>
+      <div class="card" style="background:rgba(201,165,52,.07);border-color:rgba(201,165,52,.25)">
+        <h3 style="font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Current Raise</h3>
+        <div class="stat-num" style="font-size:2.2rem;margin-bottom:.4rem">$124K</div>
+        <p class="body-sm" style="margin-bottom:1.5rem">Max raise via Wefunder Reg CF. Early bird terms available now.</p>
+        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="btn btn--gold" style="width:100%;justify-content:center;font-size:.72rem">Invest Now &#8594;</a>
       </div>
     </aside>
   </div>
+</section>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="logo-white.png" alt="M.J.E.R.D Enterprise" />
-        <p>A Delaware C Corporation executing a disciplined, multi-vertical acquisition strategy built for generational wealth.</p>
-        <div class="footer-social">
-          <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" class="social-icon">YT</a>
-          <a href="https://x.com/mjerdentinc" target="_blank" class="social-icon">X</a>
-          <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" class="social-icon">IG</a>
-          <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" class="social-icon">FB</a>
-          <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" class="social-icon">TK</a>
-          <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" class="social-icon">LI</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="investment.html">Investors</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Invest</h4>
-        <ul>
-          <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank">Wefunder Campaign</a></li>
-          <li><a href="investment.html">Investment Terms</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@mjerdenterprise.com">info@mjerdenterprise.com</a></li>
-          <li><a href="tel:5612833309">(561) 283-3309</a></li>
-        </ul>
+</main>
+<footer class="footer" role="contentinfo">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <img src="logo-white.png" alt="M.J.E.R.D Enterprise, Inc." width="120" height="40" loading="lazy"/>
+      <p style="margin-top:1rem">A Delaware C-Corporation headquartered in Boynton Beach, Florida. Building generational wealth through disciplined small business acquisition.</p>
+      <div class="footer__social" aria-label="Social media links">
+        <a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">YT</a>
+        <a href="https://x.com/mjerdentinc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X">X</a>
+        <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">FB</a>
+        <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">TK</a>
+        <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">LI</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 M.J.E.R.D Enterprise, Inc. — Delaware Corporation | HQ: Boynton Beach, FL</p>
-      <p>Forward-looking statements are not guarantees of future results.</p>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
+    <div class="footer__col"><h3 class="h4" style="font-size:.68rem;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem">Company</h3><ul role="list"><li><a href="about.html">About Us</a></li><li><a href="about.html#governance">Governance &amp; Values</a></li><li><a href="about.html#structure">Corporate Structure</a></li></ul></div>
+    <div class="footer__col"><h3 class="h4" style="font-size:.68rem;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem">Strategy</h3><ul role="list"><li><a href="strategic-focus.html">Strategic Focus</a></li><li><a href="acquisition-criteria.html">Acquisition Criteria</a></li><li><a href="capital-allocation.html">Capital Allocation</a></li></ul></div>
+    <div class="footer__col"><h3 class="h4" style="font-size:.68rem;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem">Investors</h3><ul role="list"><li><a href="investment.html">Investment Terms</a></li><li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer">Wefunder Campaign</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer__bottom">
+    <p>&#169; 2026 M.J.E.R.D Enterprise, Inc. &#8212; Delaware C-Corporation | HQ: Boynton Beach, FL | EIN: 41-3584270</p>
+    <p>Forward-looking statements are not guarantees of future results. No portfolio companies have been acquired to date.</p>
+  </div>
+</footer>
+<script src="main.js" defer></script>
 </body>
 </html>
