@@ -6,29 +6,14 @@
     "wefunder_url": "https://wefunder.com/mjerd.enterprise.inc",
     "last_updated": "June 2026"
   },
-  "portfolio": [
-    {
-      "id": 1,
-      "name": "Ur Gains Fitness",
-      "vertical": "Fitness & Wellness",
-      "status": "target",
-      "status_label": "Active Target",
-      "location": "South Florida",
-      "revenue": "$61,379.77",
-      "revenue_period": "Jan–Oct 2025",
-      "description": "A South Florida fitness operation with documented gross revenue and a loyal customer base. M.J.E.R.D Enterprise's first identified acquisition target.",
-      "icon": "🏋️",
-      "acquired_date": null
-    }
-  ],
   "verticals": [
     {
       "id": 1,
-      "name": "Fitness & Wellness",
+      "name": "Fitness and Wellness",
       "icon": "🏋️",
       "status": "active",
       "status_label": "Active Target",
-      "description": "Recurring revenue, loyal members, and strong community ties. High fragmentation creates prime consolidation opportunity."
+      "description": "Recurring revenue, loyal members, strong community ties. Ur Gains Fitness identified as first acquisition target with $61,379.77 documented revenue."
     },
     {
       "id": 2,
@@ -36,11 +21,11 @@
       "icon": "🚗",
       "status": "pipeline",
       "status_label": "Acquisition Pipeline",
-      "description": "Fragmented ownership, consistent demand, and significant margin improvement opportunities through operational efficiency."
+      "description": "Fragmented ownership, consistent demand, and significant margin improvement opportunities through operational discipline."
     },
     {
       "id": 3,
-      "name": "SaaS & Technology",
+      "name": "SaaS and Technology",
       "icon": "💻",
       "status": "pipeline",
       "status_label": "Acquisition Pipeline",
@@ -48,7 +33,7 @@
     },
     {
       "id": 4,
-      "name": "Franchise & Hospitality",
+      "name": "Franchise and Hospitality",
       "icon": "🏪",
       "status": "pipeline",
       "status_label": "Acquisition Pipeline",
