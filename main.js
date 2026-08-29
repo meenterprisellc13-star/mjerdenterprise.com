@@ -1,4 +1,4 @@
-/* M.J.E.R.D Enterprise — main.js v3 | website-enhancement-v2 */
+/* M.J.E.R.D. Enterprise — main.js v4 | compliance-revised */
 
 /* SCROLL ANIMATIONS */
 const fadeObs = new IntersectionObserver(entries => {
@@ -22,7 +22,6 @@ if (burger && menu) {
       burger.setAttribute('aria-expanded', 'false');
     }
   });
-  /* Keyboard accessible dropdowns */
   document.querySelectorAll('.nav__dropdown > a').forEach(a => {
     a.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -37,36 +36,8 @@ if (burger && menu) {
 /* ACTIVE NAV */
 const page = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav__links a').forEach(a => {
-  const href = a.getAttribute('href');
-  if (href === page || (page === '' && href === 'index.html')) a.classList.add('active');
+  if (a.getAttribute('href') === page) a.classList.add('active');
 });
-
-/* COUNTER */
-function runCounter(el) {
-  const target   = parseFloat(el.dataset.target);
-  const prefix   = el.dataset.prefix  || '';
-  const suffix   = el.dataset.suffix  || '';
-  const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
-  const duration = 2200;
-  const t0 = performance.now();
-  const tick = now => {
-    const p = Math.min((now - t0) / duration, 1);
-    const v = target * (1 - Math.pow(1 - p, 3));
-    el.textContent = prefix + (decimals ? v.toFixed(decimals) : Math.floor(v).toLocaleString()) + suffix;
-    if (p < 1) requestAnimationFrame(tick);
-  };
-  /* Small delay so element is visible before counting */
-  setTimeout(() => requestAnimationFrame(tick), 200);
-}
-const ctrObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && !e.target.dataset.ran) {
-      e.target.dataset.ran = '1';
-      runCounter(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => ctrObs.observe(el));
 
 /* JSON LOADER */
 async function fetchJSON(path) {
@@ -75,41 +46,26 @@ async function fetchJSON(path) {
     if (!r.ok) throw new Error(r.status);
     return await r.json();
   } catch(e) {
-    console.warn('[MJERD] Could not load', path, e.message);
+    console.warn('[MJERD] Could not load', path);
     return null;
   }
 }
 
-/* RAISE PROGRESS BAR */
-async function initProgress() {
-  const bar = document.getElementById('raise-bar');
-  const amt = document.getElementById('raise-amt');
-  const upd = document.getElementById('raise-updated');
-  if (!bar) return;
-  const data = await fetchJSON('data/portfolio.json');
-  if (!data) return;
-  const { raise_current = 0, raise_target = 124000, last_updated = '' } = data.stats;
-  const pct = Math.min((raise_current / raise_target) * 100, 100);
-  if (amt) amt.textContent = '$' + raise_current.toLocaleString();
-  if (upd) upd.textContent = 'Updated: ' + last_updated;
-  setTimeout(() => { bar.style.width = pct + '%'; }, 400);
-}
-
-/* NEWS PREVIEW */
+/* NEWS PREVIEW (homepage) */
 async function initNewsPreview() {
   const wrap = document.getElementById('news-preview');
   if (!wrap) return;
   const data = await fetchJSON('data/news.json');
   if (!data) return;
   wrap.innerHTML = data.posts.slice(0, 3).map(p => `
-    <article class="card fade-up" aria-label="${p.title}" style="padding:2rem">
+    <article class="card fade-up" style="padding:2rem">
       <div style="display:flex;gap:.6rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap">
         <span class="tag tag--gold">${p.category}</span>
         <span class="body-sm" style="font-size:.75rem">${p.date}</span>
       </div>
-      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.25rem;font-weight:600;color:var(--cream);margin-bottom:.7rem;line-height:1.3">${p.title}</h3>
+      <h3 style="font-family:Cormorant Garamond,serif;font-size:1.2rem;font-weight:600;color:var(--cream);margin-bottom:.7rem;line-height:1.3">${p.title}</h3>
       <p class="body-sm" style="margin-bottom:1.2rem">${p.excerpt}</p>
-      <a href="${p.link}" class="btn btn--ghost" style="font-size:.68rem;padding:.5rem 1rem">Read more &#8594;</a>
+      <a href="${p.link}" class="btn btn--ghost" style="font-size:.68rem;padding:.5rem 1rem">Read more &rarr;</a>
     </article>`).join('');
   wrap.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 }
@@ -128,7 +84,7 @@ async function initNewsPage() {
       </div>
       <h2 style="font-family:Cormorant Garamond,serif;font-size:1.6rem;font-weight:600;color:var(--cream);margin-bottom:1rem;line-height:1.3">${p.title}</h2>
       <p class="body-md" style="margin-bottom:1.5rem">${p.body}</p>
-      <a href="${p.link}" class="btn btn--ghost" style="font-size:.7rem;padding:.55rem 1.2rem">Learn more &#8594;</a>
+      <a href="${p.link}" class="btn btn--ghost" style="font-size:.7rem;padding:.55rem 1.2rem">Learn more &rarr;</a>
     </article>`).join('');
   wrap.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 }
@@ -138,16 +94,15 @@ const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const body = document.getElementById('form-body');
+    const body    = document.getElementById('form-body') || document.getElementById('acq-form-body');
     const success = document.getElementById('form-success');
-    if (body) body.style.display = 'none';
+    if (body)    body.style.display    = 'none';
     if (success) success.style.display = 'block';
   });
 }
 
 /* INIT */
 document.addEventListener('DOMContentLoaded', () => {
-  initProgress();
   initNewsPreview();
   initNewsPage();
 });

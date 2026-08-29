@@ -3,147 +3,83 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="M.J.E.R.D Enterprise, Inc. is a Delaware C-Corporation executing a disciplined acquisition strategy — acquiring profitable businesses and building generational wealth."/>
-<meta property="og:title" content="M.J.E.R.D Enterprise, Inc. — Acquire. Build. Legacy."/>
-<meta property="og:description" content="M.J.E.R.D Enterprise, Inc. is a Delaware C-Corporation executing a disciplined acquisition strategy — acquiring profitable businesses and building generational wealth."/>
+<meta name="description" content="M.J.E.R.D. Enterprise, Inc. is a Delaware corporation evaluating established operating businesses for potential long-term ownership. Headquartered in Boynton Beach, Florida."/>
+<meta property="og:title" content="M.J.E.R.D. Enterprise, Inc. — Acquire. Build. Legacy."/>
+<meta property="og:description" content="M.J.E.R.D. Enterprise, Inc. is a Delaware corporation evaluating established operating businesses for potential long-term ownership. Headquartered in Boynton Beach, Florida."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://mjerdenterprise.com/"/>
+<meta property="og:url" content="https://mjerdenterprise.com/index.html"/>
 <meta property="og:image" content="https://mjerdenterprise.com/logo-white.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<link rel="canonical" href="https://mjerdenterprise.com/"/>
+<link rel="canonical" href="https://mjerdenterprise.com/index.html"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="style.css"/>
-<title>M.J.E.R.D Enterprise, Inc. — Acquire. Build. Legacy.</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Corporation","name":"M.J.E.R.D Enterprise, Inc.","url":"https://mjerdenterprise.com","logo":"https://mjerdenterprise.com/logo-white.png","description":"Delaware C-Corporation executing a disciplined, multi-vertical acquisition strategy.","address":{"@type":"PostalAddress","streetAddress":"1540 SW 8th St Unit 1078","addressLocality":"Boynton Beach","addressRegion":"FL","postalCode":"33426","addressCountry":"US"},"foundingDate":"2024","founder":{"@type":"Person","name":"Martin J. Dacelin"}}</script>
-
+<title>M.J.E.R.D. Enterprise, Inc. — Acquire. Build. Legacy.</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Corporation","name":"M.J.E.R.D. Enterprise, Inc.","legalName":"M.J.E.R.D. Enterprise, Inc.","url":"https://mjerdenterprise.com","logo":"https://mjerdenterprise.com/logo-white.png","description":"M.J.E.R.D. Enterprise, Inc. is a Delaware corporation headquartered in Boynton Beach, Florida. The company evaluates established operating businesses for potential long-term ownership.","address":{"@type":"PostalAddress","addressLocality":"Boynton Beach","addressRegion":"FL","addressCountry":"US"},"foundingDate":"2024","founder":{"@type":"Person","name":"Martin J. Dacelin"},"sameAs":["https://youtube.com/@m.j.e.r.denterpriseinc","https://x.com/mjerdentinc","https://www.instagram.com/m.j.e.r.denterprise","https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406"]}</script>
+<style>
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(150deg,var(--navy-deep) 0%,var(--navy) 50%,var(--navy-mid) 100%)}
+.hero__bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 75% 25%,rgba(201,165,52,.06) 0%,transparent 55%);pointer-events:none}
+.hero__grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.hero__inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;padding-top:calc(var(--nav-h) + 60px)}
+.hero__eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;display:flex;align-items:center;gap:.8rem}
+.hero__eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero__title{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,8.5vw,7.5rem);font-weight:600;line-height:.92;color:var(--cream);margin-bottom:2rem}
+.hero__title em{font-style:italic;color:var(--gold)}
+.hero__sub{font-size:1rem;color:var(--cream-dim);line-height:1.9;max-width:480px;margin-bottom:2.8rem}
+.hero__btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero__scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,232,.3);animation:bob 2.2s ease-in-out infinite}
+.hero__scroll::after{content:'';width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent)}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-7px)}}
+.model-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem}
+.model-card{background:var(--navy-card);border-top:2px solid var(--gold);border-radius:0 0 var(--radius) var(--radius);padding:2rem 1.8rem;transition:transform var(--transition),box-shadow var(--transition)}
+.model-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.model-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:rgba(201,165,52,.1);line-height:1;margin-bottom:.8rem}
+.model-label{font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+@media(max-width:1024px){.hero__inner{grid-template-columns:1fr;gap:3rem}.fact-grid{grid-template-columns:repeat(2,1fr)}.model-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.news-grid{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-nav">Skip to main content</a>
 <nav class="nav" aria-label="Main navigation">
-  <a href="index.html" aria-label="M.J.E.R.D Enterprise home">
-    <img src="logo-white.png" alt="M.J.E.R.D Enterprise, Inc." class="nav__logo" width="140" height="46" loading="eager"/>
-  </a>
+  <a href="index.html" aria-label="M.J.E.R.D. Enterprise home"><img src="logo-white.png" alt="M.J.E.R.D. Enterprise, Inc." class="nav__logo" width="140" height="46" loading="eager"/></a>
   <ul class="nav__links" role="list">
     <li><a href="index.html" class='active'>Home</a></li>
-    <li class="nav__dropdown">
-      <a href="about.html" aria-haspopup="true" >Company &#9660;</a>
-      <ul class="nav__dropdown-menu" role="list">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="about.html#governance">Governance &amp; Values</a></li>
-        <li><a href="about.html#structure">Corporate Structure</a></li>
-      </ul>
-    </li>
-    <li class="nav__dropdown">
-      <a href="investment-philosophy.html" aria-haspopup="true" >Strategy &#9660;</a>
-      <ul class="nav__dropdown-menu" role="list">
-        <li><a href="investment-philosophy.html">Investment Philosophy</a></li>
-        <li><a href="acquisition-criteria.html">Acquisition Criteria</a></li>
-        <li><a href="capital-allocation.html">Capital Allocation</a></li>
-        <li><a href="acquire-with-us.html">Acquire With Us</a></li>
-      </ul>
-    </li>
-    <li><a href="investment.html" >Investors</a></li>
+    <li class="nav__dropdown"><a href="about.html" aria-haspopup="true" >Company &#9660;</a>
+      <ul class="nav__dropdown-menu" role="list"><li><a href="about.html">About Us</a></li><li><a href="about.html#governance">Governance &amp; Values</a></li><li><a href="about.html#structure">Corporate Structure</a></li></ul></li>
+    <li class="nav__dropdown"><a href="investment-philosophy.html" aria-haspopup="true" >Strategy &#9660;</a>
+      <ul class="nav__dropdown-menu" role="list"><li><a href="investment-philosophy.html">Investment Philosophy</a></li><li><a href="acquisition-criteria.html">Acquisition Criteria</a></li><li><a href="capital-allocation.html">Capital Allocation</a></li><li><a href="acquire-with-us.html">Acquire With Us</a></li></ul></li>
+    <li><a href="company-information.html" >Company Info</a></li>
     <li><a href="news.html" >News</a></li>
     <li><a href="contact.html" >Contact</a></li>
-    <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="nav__cta">Invest Now</a></li>
+    <li><a href="contact.html" class="nav__cta">Get in Touch</a></li>
   </ul>
-  <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav__hamburger" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
-<div class="stage-banner" role="note">
-  <p>Capital Formation &amp; Acquisition Stage <span>&#8212; M.J.E.R.D Enterprise is actively evaluating acquisition opportunities. No portfolio companies have been acquired to date.</span></p>
-</div>
-<style>
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
-  background:linear-gradient(150deg,var(--navy-deep) 0%,var(--navy) 50%,var(--navy-mid) 100%)}
-.hero__bg{position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 75% 25%,rgba(201,165,52,.06) 0%,transparent 55%),
-  radial-gradient(ellipse 50% 80% at 15% 85%,rgba(12,23,52,.8) 0%,transparent 50%);pointer-events:none}
-.hero__grid{position:absolute;inset:0;opacity:.025;
-  background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
-  background-size:70px 70px;pointer-events:none}
-.hero__inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 2rem;
-  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
-  padding-top:calc(var(--nav-h) + 60px)}
-.hero__eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.8rem;display:flex;align-items:center;gap:.8rem}
-.hero__eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
-.hero__title{font-family:'Cormorant Garamond',serif;
-  font-size:clamp(4rem,8.5vw,8rem);font-weight:600;line-height:.9;color:var(--cream);margin-bottom:2rem}
-.hero__title em{font-style:italic;color:var(--gold)}
-.hero__sub{font-size:1rem;color:var(--cream-dim);line-height:1.9;max-width:460px;margin-bottom:2.8rem}
-.hero__btns{display:flex;gap:1rem;flex-wrap:wrap}
-.hero__stats{display:flex;flex-direction:column;gap:1.2rem}
-.hero__stat{background:rgba(255,255,255,.03);border:1px solid rgba(201,165,52,.12);
-  border-left:2px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;
-  padding:1.5rem 1.8rem;transition:all var(--transition)}
-.hero__stat:hover{border-color:rgba(201,165,52,.4);transform:translateX(4px)}
-.hero__scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(245,240,232,.3);animation:bob 2.2s ease-in-out infinite}
-.hero__scroll::after{content:'';width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent)}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-7px)}}
-.model-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem}
-.model-card{background:var(--navy-card);border-top:2px solid var(--gold);
-  border-radius:0 0 var(--radius) var(--radius);padding:2rem 1.8rem;
-  transition:transform var(--transition),box-shadow var(--transition)}
-.model-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.model-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;
-  color:rgba(201,165,52,.1);line-height:1;margin-bottom:.8rem}
-.model-label{font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:.8rem}
-.invest-band{background:linear-gradient(135deg,var(--navy-deep),var(--navy-mid));
-  border-top:1px solid rgba(201,165,52,.12);border-bottom:1px solid rgba(201,165,52,.12)}
-.invest-band__inner{max-width:1200px;margin:0 auto;padding:7rem 2rem;
-  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-@media(max-width:1024px){
-  .hero__inner{grid-template-columns:1fr;gap:3rem}
-  .invest-band__inner{grid-template-columns:1fr;gap:3rem}
-  .model-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:768px){
-  .news-grid{grid-template-columns:1fr}
-  .model-grid{grid-template-columns:1fr}
-}
-</style><main id="main-content">
+<div class="stage-banner" role="note"><p>Emerging Company <span>&#8212; M.J.E.R.D. Enterprise, Inc. is in an early acquisition and capital formation stage. No acquisition has closed to date.</span></p></div>
+<main id="main-content">
 <section class="hero" aria-label="Hero">
   <div class="hero__bg"></div>
   <div class="hero__grid" aria-hidden="true"></div>
   <div class="hero__inner">
     <div>
-      <p class="hero__eyebrow">M.J.E.R.D Enterprise, Inc. &#8212; Est. 2024</p>
-      <h1 class="hero__title">Acquire.<br><em>Build.</em><br>Legacy.</h1>
-      <p class="hero__sub">A Delaware C-Corporation executing a disciplined acquisition strategy &#8212; acquiring profitable businesses and building generational wealth through long-term ownership.</p>
+      <p class="hero__eyebrow">M.J.E.R.D. Enterprise, Inc. &#8212; Est. 2024</p>
+      <h1 class="hero__title">Acquire.<br><em>Build.</em> Legacy.</h1>
+      <p class="hero__sub">M.J.E.R.D. Enterprise, Inc. is a Delaware corporation headquartered in Boynton Beach, Florida. The company evaluates established operating businesses for potential long-term ownership, subject to diligence, financing, and definitive agreements.</p>
       <div class="hero__btns">
-        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="btn btn--gold">Invest on Wefunder &#8594;</a>
-        <a href="investment-philosophy.html" class="btn btn--outline">Our Philosophy</a>
+        <a href="investment-philosophy.html" class="btn btn--gold">Learn About Our Strategy</a>
+        <a href="acquire-with-us.html" class="btn btn--outline">Business Owners: Explore a Transition</a>
       </div>
       <div class="trust-badges" style="margin-top:2rem">
-        <span class="trust-badge"><span>&#10003;</span> Delaware C-Corporation</span>
+        <span class="trust-badge"><span>&#10003;</span> Delaware Corporation</span>
         <span class="trust-badge"><span>&#10003;</span> Florida Headquarters</span>
-        <span class="trust-badge"><span>&#10003;</span> EIN: 41-3584270</span>
+        <span class="trust-badge"><span>&#10003;</span> Long-Term Ownership Strategy</span>
       </div>
     </div>
-    <div class="hero__stats" aria-label="Key metrics">
-      <div class="hero__stat fade-up d1">
-        <div class="stat-num">$<span class="counter" data-target="61379">0</span></div>
-        <div class="stat-label">Documented Revenue &#8212; Ur Gains Fitness 2025</div>
-      </div>
-      <div class="hero__stat fade-up d2">
-        <div class="stat-num"><span class="counter" data-target="4">0</span></div>
-        <div class="stat-label">Target Acquisition Verticals</div>
-      </div>
-      <div class="hero__stat fade-up d3">
-        <div class="stat-num">$<span class="counter" data-target="124" data-suffix="K">0K</span></div>
-        <div class="stat-label">Current Wefunder Raise Target</div>
-      </div>
-      <div class="hero__stat fade-up d4">
-        <div class="stat-num"><span class="counter" data-target="2" data-suffix=".2X" data-decimals="0">0X</span></div>
-        <div class="stat-label">Early Bird Investor Return</div>
+    <div class="fade-up d1">
+      <div class="risk-notice">
+        <p><strong>Company Status Notice</strong><br>M.J.E.R.D. is an emerging company. No acquisition has closed to date. Potential opportunities are subject to due diligence, financing, definitive documentation, and closing conditions.</p>
       </div>
     </div>
   </div>
@@ -155,37 +91,35 @@
     <span class="marquee__item">Acquire<span class="marquee__dot"></span></span>
     <span class="marquee__item">Build<span class="marquee__dot"></span></span>
     <span class="marquee__item">Legacy<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Delaware C-Corporation<span class="marquee__dot"></span></span>
+    <span class="marquee__item">Delaware Corporation<span class="marquee__dot"></span></span>
     <span class="marquee__item">Long-Term Ownership<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Disciplined Capital Allocation<span class="marquee__dot"></span></span>
+    <span class="marquee__item">Disciplined Stewardship<span class="marquee__dot"></span></span>
     <span class="marquee__item">Operational Excellence<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Generational Wealth<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Boynton Beach, FL<span class="marquee__dot"></span></span>
+    <span class="marquee__item">Boynton Beach, Florida<span class="marquee__dot"></span></span>
     <span class="marquee__item">Acquire<span class="marquee__dot"></span></span>
     <span class="marquee__item">Build<span class="marquee__dot"></span></span>
     <span class="marquee__item">Legacy<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Delaware C-Corporation<span class="marquee__dot"></span></span>
+    <span class="marquee__item">Delaware Corporation<span class="marquee__dot"></span></span>
     <span class="marquee__item">Long-Term Ownership<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Disciplined Capital Allocation<span class="marquee__dot"></span></span>
+    <span class="marquee__item">Disciplined Stewardship<span class="marquee__dot"></span></span>
     <span class="marquee__item">Operational Excellence<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Generational Wealth<span class="marquee__dot"></span></span>
-    <span class="marquee__item">Boynton Beach, FL<span class="marquee__dot"></span></span>
+    <span class="marquee__item">Boynton Beach, Florida<span class="marquee__dot"></span></span>
   </div>
 </div>
 
 <section class="section" style="background:var(--navy-mid)">
   <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center">
     <div class="fade-up">
-      <blockquote style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:1.5rem">
-        &#8220;Our vision was born from a desire to build more than businesses &#8212; we set out to build a <span style="color:var(--gold)">legacy</span> that extends beyond one lifetime.&#8221;
+      <blockquote style="font-family:Cormorant Garamond,serif;font-size:clamp(1.5rem,3vw,2.2rem);font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:1.5rem">
+        &#8220;Our vision was born from a desire to build more than businesses &#8212; we set out to build a <span style="color:var(--gold)">legacy</span> through disciplined, long-term ownership.&#8221;
       </blockquote>
       <cite style="font-style:normal;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">Martin J. Dacelin &#8212; Founder &amp; CEO</cite>
     </div>
     <div class="fade-up d1">
-      <span class="label">Who We Are</span>
+      <span class="label">Our Positioning</span>
       <h2 class="h2" style="margin-bottom:1.2rem">We Are Not Advisors.<br>We Are Owners.</h2>
       <div class="gold-rule"></div>
-      <p class="body-md" style="margin-bottom:2rem">M.J.E.R.D Enterprise, Inc. identifies fundamentally sound businesses, acquires them through disciplined underwriting, installs operational excellence, and holds them for long-term generational value creation.</p>
+      <p class="body-md" style="margin-bottom:2rem">M.J.E.R.D. evaluates established operating businesses with durable customer relationships, understandable operations, and opportunities for long-term stewardship and operational improvement. Each opportunity is subject to independent diligence, financing availability, negotiated terms, and closing conditions.</p>
       <a href="about.html" class="btn btn--outline">Our Story &#8594;</a>
     </div>
   </div>
@@ -194,16 +128,33 @@
 <section class="section">
   <div class="container">
     <div class="fade-up">
-      <span class="label">The M.J.E.R.D Model</span>
-      <h2 class="h2">How We Create Value</h2>
+      <span class="label">Built for Disciplined Acquisition</span>
+      <h2 class="h2">Company at a Glance</h2>
       <div class="gold-rule"></div>
-      <p class="body-lg" style="max-width:560px">A repeatable four-step process that transforms undervalued businesses into scalable, cash-flowing portfolio companies.</p>
+      <p class="body-lg" style="max-width:560px">Factual information about M.J.E.R.D. Enterprise, Inc. as it stands today.</p>
+    </div>
+    <div class="fact-grid" style="margin-top:3rem">
+      <div class="fact-card fade-up d1"><div class="fact-card__label">Legal Structure</div><div class="fact-card__value">Delaware Corporation</div></div>
+      <div class="fact-card fade-up d2"><div class="fact-card__label">Headquarters</div><div class="fact-card__value">Boynton Beach, Florida</div></div>
+      <div class="fact-card fade-up d3"><div class="fact-card__label">Strategy</div><div class="fact-card__value">Long-Term Ownership</div></div>
+      <div class="fact-card fade-up d4"><div class="fact-card__label">Acquisition Status</div><div class="fact-card__value">No Acquisitions Closed to Date</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="fade-up">
+      <span class="label">The M.J.E.R.D. Model</span>
+      <h2 class="h2">How We Approach Value Creation</h2>
+      <div class="gold-rule"></div>
+      <p class="body-lg" style="max-width:560px">A disciplined four-step process guiding how M.J.E.R.D. evaluates, pursues, and operates potential acquisitions.</p>
     </div>
     <div class="model-grid">
-      <div class="model-card fade-up d1"><div class="model-num" aria-hidden="true">01</div><div class="model-label">Identify</div><p class="body-sm">Source fundamentally sound businesses with proven cash flow, loyal customers, and clear operational improvement opportunities.</p></div>
-      <div class="model-card fade-up d2"><div class="model-num" aria-hidden="true">02</div><div class="model-label">Acquire</div><p class="body-sm">Negotiate disciplined terms using seller notes, earnouts, and creative structuring to preserve capital and align incentives.</p></div>
-      <div class="model-card fade-up d3"><div class="model-num" aria-hidden="true">03</div><div class="model-label">Optimize</div><p class="body-sm">Install financial controls, KPI dashboards, operational automation, and cost discipline across every acquired company.</p></div>
-      <div class="model-card fade-up d4"><div class="model-num" aria-hidden="true">04</div><div class="model-label">Scale</div><p class="body-sm">Drive organic growth, expand operations, execute bolt-on acquisitions, and build durable long-term enterprise value.</p></div>
+      <div class="model-card fade-up d1"><div class="model-num" aria-hidden="true">01</div><div class="model-label">Evaluate</div><p class="body-sm">Source established operating businesses with durable customer relationships, understandable economics, and long-term improvement potential.</p></div>
+      <div class="model-card fade-up d2"><div class="model-num" aria-hidden="true">02</div><div class="model-label">Diligence</div><p class="body-sm">Conduct thorough, independent due diligence on operations, financials, and management before pursuing any transaction.</p></div>
+      <div class="model-card fade-up d3"><div class="model-num" aria-hidden="true">03</div><div class="model-label">Acquire</div><p class="body-sm">Negotiate practical, disciplined transaction structures with clear terms, subject to definitive documentation and closing conditions.</p></div>
+      <div class="model-card fade-up d4"><div class="model-num" aria-hidden="true">04</div><div class="model-label">Steward</div><p class="body-sm">Operate acquired businesses with long-term orientation, supporting continuity for customers and employees while improving operations.</p></div>
     </div>
   </div>
 </section>
@@ -215,66 +166,61 @@
         <span class="label">How We Think</span>
         <h2 class="h2">Our Investment Philosophy</h2>
         <div class="gold-rule"></div>
-        <p class="body-lg" style="max-width:540px">Six principles that guide every acquisition decision M.J.E.R.D Enterprise makes.</p>
+        <p class="body-lg" style="max-width:540px">Six principles guiding every acquisition decision M.J.E.R.D. makes.</p>
       </div>
       <a href="investment-philosophy.html" class="btn btn--ghost" style="font-size:.72rem;padding:.6rem 1.2rem">Full Philosophy &#8594;</a>
     </div>
     <div class="philosophy-grid" style="margin-top:3.5rem">
-      <div class="philosophy-card fade-up d1"><div class="philosophy-num" aria-hidden="true">01</div><div class="philosophy-title">Quality Businesses</div><p class="body-sm">We seek fundamentally sound businesses with durable operations, recurring demand, and long-term growth potential.</p></div>
-      <div class="philosophy-card fade-up d2"><div class="philosophy-num" aria-hidden="true">02</div><div class="philosophy-title">Disciplined Capital Allocation</div><p class="body-sm">Every investment decision is guided by long-term value creation, prudent risk management, and responsible stewardship of capital.</p></div>
-      <div class="philosophy-card fade-up d3"><div class="philosophy-num" aria-hidden="true">03</div><div class="philosophy-title">Operational Excellence</div><p class="body-sm">We believe sustainable growth comes from strong leadership, efficient operations, and continuous improvement.</p></div>
-      <div class="philosophy-card fade-up d4"><div class="philosophy-num" aria-hidden="true">04</div><div class="philosophy-title">Long-Term Ownership</div><p class="body-sm">We acquire businesses with the intention of building enduring value rather than pursuing short-term exits.</p></div>
-      <div class="philosophy-card fade-up d5"><div class="philosophy-num" aria-hidden="true">05</div><div class="philosophy-title">Scalable Opportunities</div><p class="body-sm">We evaluate businesses capable of sustainable expansion through disciplined execution and operational enhancement.</p></div>
-      <div class="philosophy-card fade-up d6"><div class="philosophy-num" aria-hidden="true">06</div><div class="philosophy-title">Legacy Mindset</div><p class="body-sm">Every acquisition is viewed as an opportunity to create lasting value for future generations.</p></div>
+      <div class="philosophy-card fade-up d1"><div class="philosophy-num" aria-hidden="true">01</div><div class="philosophy-title">Quality Businesses</div><p class="body-sm">Fundamentally sound businesses with durable operations, recurring demand, and long-term growth potential.</p></div>
+      <div class="philosophy-card fade-up d2"><div class="philosophy-num" aria-hidden="true">02</div><div class="philosophy-title">Disciplined Capital Allocation</div><p class="body-sm">Every decision guided by long-term value creation, prudent risk management, and responsible stewardship.</p></div>
+      <div class="philosophy-card fade-up d3"><div class="philosophy-num" aria-hidden="true">03</div><div class="philosophy-title">Operational Excellence</div><p class="body-sm">Sustainable growth through strong leadership, efficient operations, and continuous improvement.</p></div>
+      <div class="philosophy-card fade-up d4"><div class="philosophy-num" aria-hidden="true">04</div><div class="philosophy-title">Long-Term Ownership</div><p class="body-sm">We acquire with the intention of building enduring value rather than pursuing short-term exits.</p></div>
+      <div class="philosophy-card fade-up d5"><div class="philosophy-num" aria-hidden="true">05</div><div class="philosophy-title">Scalable Opportunities</div><p class="body-sm">Businesses capable of sustainable expansion through disciplined execution and operational enhancement.</p></div>
+      <div class="philosophy-card fade-up d6"><div class="philosophy-num" aria-hidden="true">06</div><div class="philosophy-title">Legacy Mindset</div><p class="body-sm">Every potential acquisition is viewed through a long-term ownership lens, not a transaction lens.</p></div>
     </div>
   </div>
 </section>
 
-<div class="invest-band" role="complementary" aria-label="Investor information">
-  <div class="invest-band__inner">
-    <div class="fade-up">
-      <span class="label">For Investors</span>
-      <h2 class="h2" style="margin-bottom:1rem">Invest in the Future of Ownership</h2>
-      <div class="gold-rule"></div>
-      <p class="body-md" style="margin-bottom:1.5rem">We are raising $50,000&#8211;$124,000 via Wefunder Regulation CF. Revenue Share Loan secured by the assets of M.J.E.R.D Enterprise, Inc.</p>
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,165,52,.12);border-radius:var(--radius);padding:1.4rem;margin-bottom:2rem">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;gap:.5rem">
-          <span class="label" style="margin-bottom:0">Live Raise Progress</span>
-          <span class="body-sm" id="raise-updated" aria-live="polite">Loading&#8230;</span>
+<section class="section" style="padding-top:0;background:var(--navy-mid)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+      <div class="fade-up">
+        <span class="label">Company Information</span>
+        <h2 class="h2" style="margin-bottom:1rem">For Those Interested in M.J.E.R.D.</h2>
+        <div class="gold-rule"></div>
+        <p class="body-md" style="margin-bottom:2rem">M.J.E.R.D. Enterprise, Inc. may have an active securities offering through an authorized funding portal. Any offer or sale of securities is made only through official offering materials.</p>
+        <div class="disclosure-block">
+          <p>Any offer or sale of securities by M.J.E.R.D. Enterprise, Inc. is made only through the official offering materials and, if applicable, the authorized funding portal. This website is provided for general informational purposes and is not an offer to sell or a solicitation of an offer to buy securities. Investments involve risk, including possible loss of the entire investment.</p>
         </div>
-        <div class="progress-bar__track" role="progressbar" aria-label="Fundraising progress"><div class="progress-bar__fill" id="raise-bar"></div></div>
-        <div style="display:flex;justify-content:space-between;margin-top:.8rem">
-          <div><div class="stat-num" style="font-size:1.5rem" id="raise-amt">$0</div><div class="stat-label">Raised</div></div>
-          <div style="text-align:right"><div class="stat-num" style="font-size:1.5rem">$124K</div><div class="stat-label">Goal</div></div>
+        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="btn btn--gold">View Official Offering Materials</a>
+      </div>
+      <div class="fade-up d1">
+        <div class="card">
+          <h3 class="h4" style="color:var(--gold);margin-bottom:1.2rem">Risks &amp; Uncertainties</h3>
+          <ul class="risk-list">
+            <li>The company has not completed an acquisition</li>
+            <li>Potential transactions may not close</li>
+            <li>Financing may not be available on acceptable terms</li>
+            <li>Historical target information may be incomplete or unverified</li>
+            <li>Operating results may differ materially from expectations</li>
+            <li>Any investment may result in loss of all invested capital</li>
+          </ul>
         </div>
       </div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer" class="btn btn--gold">Invest on Wefunder &#8594;</a>
-        <a href="investment.html" class="btn btn--outline">View Terms</a>
-      </div>
-    </div>
-    <div class="fade-up d1">
-      <div class="term-row"><span class="body-sm">Instrument</span><span style="color:var(--gold);font-weight:600">Revenue Share Loan</span></div>
-      <div class="term-row"><span class="body-sm">Revenue Share</span><span style="color:var(--gold);font-weight:600">3% Gross Revenue</span></div>
-      <div class="term-row"><span class="body-sm">Early Bird Return</span><span style="color:var(--gold);font-weight:600">2.2X</span></div>
-      <div class="term-row"><span class="body-sm">Standard Return</span><span style="color:var(--gold);font-weight:600">1.9X</span></div>
-      <div class="term-row"><span class="body-sm">Minimum Investment</span><span style="color:var(--gold);font-weight:600">$100</span></div>
-      <div class="term-row"><span class="body-sm">Raise Target</span><span style="color:var(--gold);font-weight:600">$50K &#8211; $124K</span></div>
-      <div class="term-row"><span class="body-sm">Secured By</span><span style="color:var(--gold);font-weight:600">Company Assets</span></div>
     </div>
   </div>
-</div>
+</section>
 
 <section class="section" aria-labelledby="video-heading">
   <div class="container" style="text-align:center">
     <div class="fade-up">
-      <span class="label">Founder Pitch</span>
-      <h2 class="h2" id="video-heading" style="margin-bottom:1rem">Our First Target</h2>
+      <span class="label">Founder Message</span>
+      <h2 class="h2" id="video-heading" style="margin-bottom:1rem">Hear From Martin Dacelin</h2>
       <div class="gold-rule gold-rule--center"></div>
-      <p class="body-md" style="max-width:480px;margin:0 auto 3rem">Watch Martin Dacelin present our first acquisition target and the investment opportunity.</p>
+      <p class="body-md" style="max-width:480px;margin:0 auto 3rem">Watch the founder discuss M.J.E.R.D.&#8217;s long-term ownership approach and company vision.</p>
     </div>
     <div class="fade-up d1" style="position:relative;padding-bottom:56.25%;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(201,165,52,.15)">
-      <iframe src="https://www.youtube.com/embed/5XsscwUU44U" title="M.J.E.R.D Enterprise — Our First Target" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+      <iframe src="https://www.youtube.com/embed/5XsscwUU44U" title="M.J.E.R.D. Enterprise &#8212; Founder Message" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
     </div>
   </div>
 </section>
@@ -292,50 +238,22 @@
 <footer class="footer" role="contentinfo">
   <div class="footer__grid">
     <div class="footer__brand">
-      <img src="logo-white.png" alt="M.J.E.R.D Enterprise, Inc." width="120" height="40" loading="lazy"/>
-      <p>A Delaware C-Corporation headquartered in Boynton Beach, Florida. Building generational wealth through disciplined, long-term business acquisition.</p>
+      <img src="logo-white.png" alt="M.J.E.R.D. Enterprise, Inc." width="120" height="40" loading="lazy"/>
+      <p>M.J.E.R.D. Enterprise, Inc. evaluates established operating businesses for potential long-term ownership, subject to diligence, financing, and definitive agreements.</p>
       <div class="footer__social" aria-label="Social media links"><a href="https://youtube.com/@m.j.e.r.denterpriseinc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube">YT</a>
         <a href="https://x.com/mjerdentinc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X">X</a>
         <a href="https://www.instagram.com/m.j.e.r.denterprise" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">IG</a>
         <a href="https://www.facebook.com/share/17XXBZwZ75/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook">FB</a>
         <a href="https://www.tiktok.com/@mjerdenterpriseinc" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok">TK</a>
         <a href="https://www.linkedin.com/in/mjerd-enterprise-inc-9b5b19406" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">LI</a></div>
-      <div class="trust-badges" style="margin-top:1.5rem">
-        <span class="trust-badge"><span>&#10003;</span> Delaware C-Corp</span>
-        <span class="trust-badge"><span>&#10003;</span> Florida HQ</span>
-        <span class="trust-badge"><span>&#10003;</span> EIN: 41-3584270</span>
-      </div>
     </div>
-    <div class="footer__col">
-      <h3 class="h4" style="font-size:.68rem;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem">Company</h3>
-      <ul role="list">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="about.html#governance">Governance &amp; Values</a></li>
-        <li><a href="about.html#structure">Corporate Structure</a></li>
-      </ul>
-    </div>
-    <div class="footer__col">
-      <h3 class="h4" style="font-size:.68rem;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem">Strategy</h3>
-      <ul role="list">
-        <li><a href="investment-philosophy.html">Investment Philosophy</a></li>
-        <li><a href="acquisition-criteria.html">Acquisition Criteria</a></li>
-        <li><a href="capital-allocation.html">Capital Allocation</a></li>
-        <li><a href="acquire-with-us.html">Acquire With Us</a></li>
-      </ul>
-    </div>
-    <div class="footer__col">
-      <h3 class="h4" style="font-size:.68rem;letter-spacing:.22em;color:var(--gold);margin-bottom:1.2rem">Investors</h3>
-      <ul role="list">
-        <li><a href="investment.html">Investment Terms</a></li>
-        <li><a href="https://wefunder.com/mjerd.enterprise.inc" target="_blank" rel="noopener noreferrer">Wefunder Campaign</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </div>
+    <div class="footer__col"><h4>Company</h4><ul role="list"><li><a href="about.html">About Us</a></li><li><a href="about.html#governance">Governance &amp; Values</a></li><li><a href="about.html#structure">Corporate Structure</a></li></ul></div>
+    <div class="footer__col"><h4>Strategy</h4><ul role="list"><li><a href="investment-philosophy.html">Investment Philosophy</a></li><li><a href="acquisition-criteria.html">Acquisition Criteria</a></li><li><a href="capital-allocation.html">Capital Allocation</a></li><li><a href="acquire-with-us.html">Acquire With Us</a></li></ul></div>
+    <div class="footer__col"><h4>Information</h4><ul role="list"><li><a href="company-information.html">Company Information</a></li><li><a href="news.html">News &amp; Updates</a></li><li><a href="contact.html">Contact</a></li></ul></div>
   </div>
   <div class="footer__bottom">
-    <p>&#169; 2026 M.J.E.R.D Enterprise, Inc. &#8212; Delaware C-Corporation | HQ: Boynton Beach, FL | EIN: 41-3584270</p>
-    <p>Forward-looking statements are not guarantees of future results. No portfolio companies have been acquired to date.</p>
+    <p>&#169; 2026 M.J.E.R.D. Enterprise, Inc., a Delaware corporation. Headquarters: Boynton Beach, Florida.</p>
+    <p>No acquisition has closed to date. This website is for general informational purposes only and does not constitute an offer to sell or solicitation of securities.</p>
   </div>
 </footer>
 <script src="main.js" defer></script>

@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://mjerdenterprise.com/sitemap.xml
