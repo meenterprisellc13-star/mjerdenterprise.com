@@ -1,9 +1,8 @@
 {
   "stats": {
-    "raise_target": 124000,
-    "raise_minimum": 50000,
-    "raise_current": 0,
-    "wefunder_url": "https://wefunder.com/mjerd.enterprise.inc",
+    "stage": "Capital Formation",
+    "acquisitions_closed": 0,
+    "note": "No acquisition has closed to date.",
     "last_updated": "June 2026"
   }
 }
