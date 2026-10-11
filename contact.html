@@ -89,16 +89,21 @@
         <h2 class="h3" style="margin-bottom:.5rem">Send a Message</h2>
         <p class="body-sm" style="margin-bottom:2rem">We respond to all inquiries within 24&#8211;48 business hours. All information is kept confidential.</p>
         <div id="form-body">
-          <form id="contact-form" novalidate aria-label="Contact form">
+          <form id="contact-form" action="https://formsubmit.co/info@mjerdenterprise.com" method="POST" novalidate aria-label="Contact form">
+            <input type="hidden" name="_subject" value="New Contact Form Message - mjerdenterprise.com"/>
+            <input type="hidden" name="_template" value="table"/>
+            <input type="hidden" name="_captcha" value="false"/>
+            <input type="hidden" name="_next" value="https://mjerdenterprise.com/contact.html"/>
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true"/>
             <div class="form__row">
-              <div class="form__group"><label class="form__label" for="firstName">First Name</label><input class="form__input" type="text" id="firstName" placeholder="John" required autocomplete="given-name"/></div>
-              <div class="form__group"><label class="form__label" for="lastName">Last Name</label><input class="form__input" type="text" id="lastName" placeholder="Doe" required autocomplete="family-name"/></div>
+              <div class="form__group"><label class="form__label" for="firstName">First Name</label><input class="form__input" type="text" id="firstName" name="First Name" placeholder="John" required autocomplete="given-name"/></div>
+              <div class="form__group"><label class="form__label" for="lastName">Last Name</label><input class="form__input" type="text" id="lastName" name="Last Name" placeholder="Doe" required autocomplete="family-name"/></div>
             </div>
-            <div class="form__group"><label class="form__label" for="email">Email Address</label><input class="form__input" type="email" id="email" placeholder="john@example.com" required autocomplete="email"/></div>
-            <div class="form__group"><label class="form__label" for="phone">Phone Number</label><input class="form__input" type="tel" id="phone" placeholder="(555) 000-0000" autocomplete="tel"/></div>
+            <div class="form__group"><label class="form__label" for="email">Email Address</label><input class="form__input" type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email"/></div>
+            <div class="form__group"><label class="form__label" for="phone">Phone Number</label><input class="form__input" type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" autocomplete="tel"/></div>
             <div class="form__group">
               <label class="form__label" for="inquiry">Inquiry Type</label>
-              <select class="form__select" id="inquiry" required>
+              <select class="form__select" id="inquiry" name="Inquiry Type" required>
                 <option value="" disabled selected>Select inquiry type</option>
                 <option>Business Owner &#8212; Exploring a Transition</option>
                 <option>Strategic Partner</option>
@@ -109,8 +114,9 @@
                 <option>General Inquiry</option>
               </select>
             </div>
-            <div class="form__group"><label class="form__label" for="message">Message</label><textarea class="form__textarea" id="message" placeholder="Tell us how we can help..." required></textarea></div>
+            <div class="form__group"><label class="form__label" for="message">Message</label><textarea class="form__textarea" id="message" name="Message" placeholder="Tell us how we can help..." required></textarea></div>
             <button type="submit" class="btn btn--gold" style="width:100%;justify-content:center">Send Message &#8594;</button>
+            <p class="body-sm form-error" role="alert" style="display:none;text-align:center;margin-top:1rem;color:#e07a6a">Sorry, your message could not be sent. Please email us directly at <a href="mailto:info@mjerdenterprise.com" style="color:var(--gold)">info@mjerdenterprise.com</a>.</p>
             <p class="body-sm" style="text-align:center;margin-top:1rem;font-size:.75rem">Your information is kept confidential and will not be shared with third parties. This form does not constitute an investment inquiry or commitment.</p>
           </form>
         </div>
