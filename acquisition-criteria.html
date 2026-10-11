@@ -85,19 +85,25 @@
           <p class="body-sm" style="margin-bottom:.8rem">All information shared is held in strict confidence. We respond within 24&#8211;48 business hours.</p>
           <div class="risk-notice" style="margin-bottom:1.5rem"><p>Every potential transaction remains subject to diligence, financing, negotiation, and definitive agreements. Submitting this form does not create any obligation on either party.</p></div>
           <div id="acq-form-body">
-            <form id="contact-form" novalidate>
+            <form id="contact-form" action="https://formsubmit.co/info@mjerdenterprise.com" method="POST" novalidate aria-label="Confidential business inquiry form">
+            <input type="hidden" name="_subject" value="New Confidential Business Inquiry - mjerdenterprise.com"/>
+            <input type="hidden" name="_template" value="table"/>
+            <input type="hidden" name="_captcha" value="false"/>
+            <input type="hidden" name="_next" value="https://mjerdenterprise.com/acquisition-criteria.html"/>
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true"/>
               <div class="form__row">
-                <div class="form__group"><label class="form__label" for="acqFirst">First Name</label><input class="form__input" type="text" id="acqFirst" placeholder="John" required/></div>
-                <div class="form__group"><label class="form__label" for="acqLast">Last Name</label><input class="form__input" type="text" id="acqLast" placeholder="Doe" required/></div>
+                <div class="form__group"><label class="form__label" for="acqFirst">First Name</label><input class="form__input" type="text" id="acqFirst" name="First Name" placeholder="John" required/></div>
+                <div class="form__group"><label class="form__label" for="acqLast">Last Name</label><input class="form__input" type="text" id="acqLast" name="Last Name" placeholder="Doe" required/></div>
               </div>
-              <div class="form__group"><label class="form__label" for="acqEmail">Email Address</label><input class="form__input" type="email" id="acqEmail" placeholder="john@company.com" required/></div>
-              <div class="form__group"><label class="form__label" for="acqPhone">Phone Number</label><input class="form__input" type="tel" id="acqPhone" placeholder="(555) 000-0000"/></div>
-              <div class="form__group"><label class="form__label" for="acqBiz">Business Name</label><input class="form__input" type="text" id="acqBiz" placeholder="Your Company Name"/></div>
+              <div class="form__group"><label class="form__label" for="acqEmail">Email Address</label><input class="form__input" type="email" id="acqEmail" name="email" placeholder="john@company.com" required/></div>
+              <div class="form__group"><label class="form__label" for="acqPhone">Phone Number</label><input class="form__input" type="tel" id="acqPhone" name="Phone" placeholder="(555) 000-0000"/></div>
+              <div class="form__group"><label class="form__label" for="acqBiz">Business Name</label><input class="form__input" type="text" id="acqBiz" name="Business Name" placeholder="Your Company Name"/></div>
               <div class="form__group"><label class="form__label" for="acqRev">Approximate Annual Revenue</label>
-                <select class="form__select" id="acqRev"><option value="" disabled selected>Select range</option><option>Under $200,000</option><option>$200,000 &#8211; $500,000</option><option>$500,000 &#8211; $1,000,000</option><option>$1,000,000 &#8211; $2,500,000</option><option>$2,500,000 &#8211; $5,000,000</option><option>Over $5,000,000</option></select>
+                <select class="form__select" id="acqRev" name="Approximate Annual Revenue"><option value="" disabled selected>Select range</option><option>Under $200,000</option><option>$200,000 &#8211; $500,000</option><option>$500,000 &#8211; $1,000,000</option><option>$1,000,000 &#8211; $2,500,000</option><option>$2,500,000 &#8211; $5,000,000</option><option>Over $5,000,000</option></select>
               </div>
-              <div class="form__group"><label class="form__label" for="acqMsg">Tell Us About Your Business</label><textarea class="form__textarea" id="acqMsg" placeholder="Brief description, reason for considering a sale, and timeline..."></textarea></div>
+              <div class="form__group"><label class="form__label" for="acqMsg">Tell Us About Your Business</label><textarea class="form__textarea" id="acqMsg" name="About the Business" placeholder="Brief description, reason for considering a sale, and timeline..."></textarea></div>
               <button type="submit" class="btn btn--gold" style="width:100%;justify-content:center">Submit Confidential Inquiry &#8594;</button>
+            <p class="body-sm form-error" role="alert" style="display:none;text-align:center;margin-top:1rem;color:#e07a6a">Sorry, your message could not be sent. Please email us directly at <a href="mailto:info@mjerdenterprise.com" style="color:var(--gold)">info@mjerdenterprise.com</a>.</p>
               <p class="body-sm" style="text-align:center;margin-top:1rem;font-size:.75rem">Your information is kept strictly confidential and will not be shared with third parties.</p>
             </form>
           </div>

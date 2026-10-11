@@ -89,15 +89,38 @@ async function initNewsPage() {
   wrap.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 }
 
-/* CONTACT FORM */
+/* CONTACT FORM (delivered via FormSubmit AJAX) */
 const form = document.getElementById('contact-form');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const body    = document.getElementById('form-body') || document.getElementById('acq-form-body');
     const success = document.getElementById('form-success');
-    if (body)    body.style.display    = 'none';
-    if (success) success.style.display = 'block';
+    const error   = form.querySelector('.form-error');
+    const btn     = form.querySelector('button[type="submit"]');
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    if (error) error.style.display = 'none';
+    const btnHTML = btn ? btn.innerHTML : '';
+    if (btn) { btn.disabled = true; btn.innerHTML = 'Sending&#8230;'; }
+    try {
+      const res  = await fetch('https://formsubmit.co/ajax/info@mjerdenterprise.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && (data.success === true || data.success === 'true')) {
+        form.reset();
+        if (body)    body.style.display    = 'none';
+        if (success) success.style.display = 'block';
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      if (error) error.style.display = 'block';
+    } finally {
+      if (btn) { btn.disabled = false; btn.innerHTML = btnHTML; }
+    }
   });
 }
 
