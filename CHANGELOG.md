@@ -18,7 +18,7 @@ This change log documents all content modifications made to bring the M.J.E.R.D.
 | Secured by Company Assets | All pages | Unverified collateral claim |
 | $50K–$124K raise target | All pages | Unverified fundraising figure |
 | $100 minimum investment | All pages | Unverified offering minimum |
-| Stat counter: $61,379.77 | index.html | Replaced with factual card — see Additions |
+| Stat counter: unverified target revenue figure | index.html | Replaced with factual card — see Additions |
 | Stat counter: $124K raise target | index.html | Removed — unverified figure |
 | Stat counter: 2.2X return | index.html | Removed — unverified offering term |
 | Stat counter: 4 verticals | index.html | Replaced with factual fact-card grid |
@@ -27,7 +27,7 @@ This change log documents all content modifications made to bring the M.J.E.R.D.
 | Growth projections table ($2.3M/$5.6M/$10.9M) | investment.html | Removed entirely — unverified forward-looking figures |
 | "First Acquisition Close — 2026 Target" timeline | about.html | Replaced with factual capital formation language |
 | Seller name in news and about pages | news.json, about.html | Seller identity removed pending written authorization |
-| "$61,379.77 in documented revenue" without disclaimer | news.json | Relabeled with required disclaimer language |
+| Unverified target revenue claim without disclaimer | news.json | Relabeled with required disclaimer language |
 | Seller name in timeline | about.html | Replaced with "potential operating-business acquisition" |
 
 ---
