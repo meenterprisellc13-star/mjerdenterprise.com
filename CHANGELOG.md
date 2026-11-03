@@ -1,5 +1,11 @@
 # M.J.E.R.D. Enterprise — Website Change Log
 
+## Revision: acquire-build-legacy | Date: November 2026
+
+Added an "ACQUIRE. BUILD. LEGACY." brand-message section to about.html (anchor #acquire-build-legacy). Footer social links (YouTube, X, Instagram, Facebook, TikTok, LinkedIn) verified present on all public pages; no funding-portal link added.
+
+---
+
 ## Revision: remove-public-offering | Date: October 2026
 
 Public pages no longer advertise a securities offering. The former investment URL now shows a neutral unavailable notice with a link to the homepage. Offering calls to action, the investor-inquiry form option, and links to an external funding portal were removed. Earlier notes below that restated offering figures have been generalized so those figures are not published here.
